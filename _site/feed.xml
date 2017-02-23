@@ -1,14 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-23T16:03:10-06:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
-</subtitle><entry><title type="html">Workout and Food log</title><link href="http://localhost:4000/java/2017/02/23/WorkoutJournal.html" rel="alternate" type="text/html" title="Workout and Food log" /><published>2017-02-23T11:06:23-06:00</published><updated>2017-02-23T11:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/23/WorkoutJournal</id><content type="html" xml:base="http://localhost:4000/java/2017/02/23/WorkoutJournal.html">&lt;p&gt;Current PR&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-23T16:24:21-06:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+</subtitle><entry><title type="html">Workout and Food log</title><link href="http://localhost:4000/java/2017/02/23/WorkoutJournal.html" rel="alternate" type="text/html" title="Workout and Food log" /><published>2017-02-23T11:06:23-06:00</published><updated>2017-02-23T11:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/23/WorkoutJournal</id><content type="html" xml:base="http://localhost:4000/java/2017/02/23/WorkoutJournal.html">&lt;h2 id=&quot;current-pr&quot;&gt;Current PR&lt;/h2&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Strict press : 110 pounds&lt;/li&gt;
-  &lt;li&gt;Squat : 240 pound&lt;/li&gt;
-&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Workout&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Weight&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Strict press&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;110&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Squat&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;240&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-&lt;h1&gt;Date 23 Feb&lt;/h1&gt;
+&lt;h2 id=&quot;date-23-feb&quot;&gt;Date 23 Feb&lt;/h2&gt;
 
-&lt;h2&gt;Food log&lt;/h2&gt;
+&lt;h3 id=&quot;food-log&quot;&gt;Food log&lt;/h3&gt;
+
 &lt;ul&gt;
   &lt;li&gt;1 companey kitchen capachinno&lt;/li&gt;
   &lt;li&gt;1 kind bar&lt;/li&gt;
@@ -16,9 +31,9 @@
   &lt;li&gt;1 decaf&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1&gt;Date 22 Feb&lt;/h1&gt;
+&lt;h2 id=&quot;date-22-feb&quot;&gt;Date 22 Feb&lt;/h2&gt;
 
-&lt;h2&gt;Workout log &lt;/h2&gt;
+&lt;h3 id=&quot;workout-log&quot;&gt;Workout log&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Strict press 10  rep * 3 rounds  75 pounds&lt;/li&gt;
@@ -33,12 +48,13 @@
 Finished in 15 minutes&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Food Journal &lt;/h2&gt;
+&lt;h3 id=&quot;food-journal&quot;&gt;Food Journal&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;1 boiled egg&lt;/li&gt;
   &lt;li&gt;1 veg thali for lunch&lt;/li&gt;
   &lt;li&gt;1 kind bar for snack&lt;/li&gt;
+  &lt;li&gt;peanuts from company kitchen&lt;/li&gt;
   &lt;li&gt;1 banana post workout&lt;/li&gt;
   &lt;li&gt;Apple Juice&lt;/li&gt;
   &lt;li&gt;pulao rice and shrimp curry leftover&lt;/li&gt;

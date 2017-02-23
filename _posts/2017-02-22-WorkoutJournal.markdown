@@ -5,27 +5,30 @@ date:   2017-02-23 11:06:23 -0600
 categories: Java
 ---
 
-Current PR
+## Current PR
 
-* Strict press : 110 pounds 
-* Squat : 240 pound
-
-
-<h1>Date 23 Feb</h1>
-
+|Workout |Weight  |
+|:--------|:-------:|
+|Strict press | 110 |
+| Squat | 240 |
 
 
-<h2>Food log</h2>
+## Date 23 Feb
+
+
+
+### Food log
+
 * 1 companey kitchen capachinno
 * 1 kind bar 
 * 1 chicken thali for lunch
 * 1 decaf
 
 
-<h1>Date 22 Feb</h1>
+## Date 22 Feb
 
 
-<h2>Workout log </h2>
+### Workout log
 
 * Strict press 10  rep * 3 rounds  75 pounds
 * Strict press  5 rep * 7rounds     80 pounds
@@ -37,11 +40,12 @@ Current PR
 Finished in 15 minutes
 
 
-<h2>Food Journal </h2>
+### Food Journal 
 
 * 1 boiled egg
 * 1 veg thali for lunch
 * 1 kind bar for snack 
+* peanuts from company kitchen
 * 1 banana post workout
 * Apple Juice
 * pulao rice and shrimp curry leftover
