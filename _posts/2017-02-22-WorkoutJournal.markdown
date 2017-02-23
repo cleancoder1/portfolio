@@ -10,7 +10,7 @@ categories: Java
 |Workout |Weight  |
 |:--------|:-------:|
 |Strict press | 110 |
-| Squat | 240 |
+|Back Squat | 240 |
 
 
 ## Date 23 Feb
