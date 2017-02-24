@@ -10,6 +10,7 @@ categories: Java
 |Workout |Weight  |
 |:--------|:-------:|
 |Strict press | 110 |
+|Push Press |165|
 |Back Squat | 240 |
 
 
