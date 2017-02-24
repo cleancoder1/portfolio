@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-24T10:34:20-06:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
-</subtitle><entry><title type="html">Workout and Food log</title><link href="http://localhost:4000/java/2017/02/23/WorkoutJournal.html" rel="alternate" type="text/html" title="Workout and Food log" /><published>2017-02-23T11:06:23-06:00</published><updated>2017-02-23T11:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/23/WorkoutJournal</id><content type="html" xml:base="http://localhost:4000/java/2017/02/23/WorkoutJournal.html">&lt;h2 id=&quot;current-pr&quot;&gt;Current PR&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-24T13:25:15-06:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+</subtitle><entry><title type="html">Workout and Food log</title><link href="http://localhost:4000/fitness/2017/02/24/WorkoutJournal.html" rel="alternate" type="text/html" title="Workout and Food log" /><published>2017-02-24T11:06:23-06:00</published><updated>2017-02-24T11:06:23-06:00</updated><id>http://localhost:4000/fitness/2017/02/24/WorkoutJournal</id><content type="html" xml:base="http://localhost:4000/fitness/2017/02/24/WorkoutJournal.html">&lt;h2 id=&quot;current-pr&quot;&gt;Current PR&lt;/h2&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -33,11 +33,12 @@
 &lt;ul&gt;
   &lt;li&gt;1 Boiled egg white&lt;/li&gt;
   &lt;li&gt;1 company kitchen capachino&lt;/li&gt;
+  &lt;li&gt;Foot log veg Quazino sub and brocoholi cheddar soup&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;date-23-feb&quot;&gt;Date 23 Feb&lt;/h2&gt;
 
-&lt;h3 id=&quot;workout-log-1&quot;&gt;workout log&lt;/h3&gt;
+&lt;h3 id=&quot;workout-log-1&quot;&gt;Workout log&lt;/h3&gt;
 &lt;p&gt;yoga workshop ply&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;shin to foot&lt;/li&gt;
@@ -63,7 +64,7 @@
   &lt;li&gt;Strict press  5 rep * 7rounds     80 pounds&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;10 rounds of&lt;/p&gt;
+&lt;p&gt;10 Rounds of&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;65 pound thrusters&lt;/li&gt;

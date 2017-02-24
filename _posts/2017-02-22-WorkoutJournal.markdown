@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Workout and Food log"
-date:   2017-02-23 11:06:23 -0600
-categories: Java
+date:   2017-02-24 11:06:23 -0600
+categories: Fitness
 ---
 
 ## Current PR
@@ -25,13 +25,14 @@ categories: Java
 ### Food log
 * 1 Boiled egg white
 * 1 company kitchen capachino
+* Foot log veg Quazino sub and brocoholi cheddar soup
 
 
 
 ## Date 23 Feb
 
 
-### workout log
+### Workout log
  yoga workshop ply
 * shin to foot
 * shin to foot pop (need to try again)
@@ -55,7 +56,7 @@ categories: Java
 * Strict press 10  rep * 3 rounds  75 pounds
 * Strict press  5 rep * 7rounds     80 pounds
 
-10 rounds of 
+10 Rounds of 
 
 * 65 pound thrusters
 * 10 push ups 
