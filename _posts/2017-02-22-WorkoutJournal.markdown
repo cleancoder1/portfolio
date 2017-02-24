@@ -14,6 +14,20 @@ categories: Java
 |Back Squat | 240 |
 
 
+## Date 24 Feb
+
+
+### Workout log
+0.5 miles on treadmill  6 min 22 sec
+
+
+
+### Food log
+* 1 Boiled egg white
+* 1 company kitchen capachino
+
+
+
 ## Date 23 Feb
 
 
