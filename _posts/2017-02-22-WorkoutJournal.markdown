@@ -16,6 +16,12 @@ categories: Java
 ## Date 23 Feb
 
 
+### workout log
+ yoga workshop ply
+* shin to foot
+* shin to foot pop (need to try again)
+
+
 
 ### Food log
 
@@ -23,6 +29,7 @@ categories: Java
 * 1 kind bar 
 * 1 chicken thali for lunch
 * 1 decaf
+* Paneer curry and pulao rice, yogurt
 
 
 ## Date 22 Feb
