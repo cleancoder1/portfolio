@@ -14,9 +14,22 @@ categories: Java
 |Back Squat | 240 |
 
 
-test
+##Date 24 Feb
+
+### Workout log
+
+* 100-80-60-40-20
+* air squats
+
+* 50-40-30-20-10
+* box jump overs
+* push press 65 pounds
+
+*1 complete set + 200
 
 
+
+*2 Eggs omlet
 ## Date 23 Feb
 
 
@@ -59,4 +72,4 @@ Finished in 15 minutes
 * peanuts from company kitchen
 * 1 banana post workout
 * Apple Juice
-* pulao rice and shrimp curry leftove
+* pulao rice and shrimp curry leftov
