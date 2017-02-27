@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Workout and Food log"
-date:   2017-02-23 11:06:23 -0600
+date:   2017-02-27 11:06:23 -0600
 categories: Java
 ---
 
@@ -14,7 +14,24 @@ categories: Java
 |Back Squat | 240 |
 
 
-##Date 24 Feb
+## Date 27 Feb (Monday)
+
+* No breakfast
+* 1 company kitchen capachinno
+* Preso shrimp wrap with salad from noodle zoo
+* 
+
+
+##Date 26 Feb (Sunday)
+
+
+
+### Food log
+* 1 Boiled egg
+* 2 coke
+* Green machine
+
+##Date 25 Feb (Saturday)
 
 ### Workout log
 
@@ -27,9 +44,35 @@ categories: Java
 
 *1 complete set + 200
 
+* 5*5 bench press at 95#
 
 
-*2 Eggs omlet
+### Food log
+* 2 Eggs omlet
+* masala dosa and p from india market
+* Chicken Fried rice from bamboo leaf
+* Chicken thali from india market
+* coke
+* coke and Rl
+
+
+## Date 24 Feb
+
+
+### Workout log
+0.5 miles on treadmill  6 min 22 sec
+
+
+
+### Food log
+* 1 Boiled egg white
+* 1 company kitchen capachino
+* 1 footlong quazinno sub
+* mutter panner with rice
+
+
+
+
 ## Date 23 Feb
 
 
