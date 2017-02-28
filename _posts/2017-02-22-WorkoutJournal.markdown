@@ -14,12 +14,30 @@ categories: Java
 |Back Squat | 240 |
 
 
+
+## Date 28 Feb (Tuesday)
+
+### Food log
+* Company Kitchen Capachinno
+* Tuna sandwitch
+* chicken thali
+* capaciino lunch
+
 ## Date 27 Feb (Monday)
 
+### Workout log
+* 3* 10  155 # back squats (65%)
+* 3* 5  180 # back swau ( 75%)
+
+
+* 800 meter run + 55 thrusters with 65# 15 minutes
+
+### Food log
 * No breakfast
 * 1 company kitchen capachinno
 * Preso shrimp wrap with salad from noodle zoo
-* 
+* starbucks grande capachinno
+* whole foods salad
 
 
 ##Date 26 Feb (Sunday)
