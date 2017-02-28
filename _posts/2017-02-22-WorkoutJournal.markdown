@@ -40,7 +40,7 @@ categories: Java
 * whole foods salad
 
 
-##Date 26 Feb (Sunday)
+## Date 26 Feb (Sunday)
 
 
 
@@ -49,7 +49,7 @@ categories: Java
 * 2 coke
 * Green machine
 
-##Date 25 Feb (Saturday)
+## Date 25 Feb (Saturday)
 
 ### Workout log
 
