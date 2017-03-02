@@ -47,7 +47,10 @@ categories: Java
 ### Food log
 * 1 Boiled egg
 * 2 coke
+* capachinno from scootors
+* banana leaf fried rice
 * Green machine
+* Egg fried Rice
 
 ## Date 25 Feb (Saturday)
 
@@ -74,7 +77,7 @@ categories: Java
 * coke and Rl
 
 
-## Date 24 Feb
+## Date 24 Feb (Friday)
 
 
 ### Workout log
@@ -91,7 +94,7 @@ categories: Java
 
 
 
-## Date 23 Feb
+## Date 23 Feb (Thursday)
 
 
 ### workout log
@@ -110,7 +113,7 @@ categories: Java
 * Paneer curry and pulao rice, yogurt
 
 
-## Date 22 Feb
+## Date 22 Feb (Wednesday)
 
 
 ### Workout log
