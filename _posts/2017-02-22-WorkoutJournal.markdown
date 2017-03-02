@@ -14,6 +14,26 @@ categories: Java
 |Back Squat | 240 |
 
 
+## Date 1st March (WED)
+
+### Food log
+* Kind bar
+* Pesto shrimp wrap and salad from noodle zoo
+* Peanut 
+* Vegetable pulao and 1 boiled egg
+
+### Workout log
+
+* Strict press 10  rep * 3 rounds  75 pounds
+* Strict press  5 rep * 7rounds     80 pounds
+
+ * 2- 4 -6 -8-10-12-14-16 -18 push press 65 pounds 
+ * 2- 4 -6 -8-10-12-14-16 -12 box jumps
+ 
+ * 10ish sledge pulls
+ 
+ * strict press seemed harder than last week ,felt tired overall in the workout
+
 
 ## Date 28 Feb (Tuesday)
 
@@ -22,6 +42,7 @@ categories: Java
 * Tuna sandwitch
 * chicken thali
 * capaciino lunch
+* Pad thai (banana leaf)
 
 ## Date 27 Feb (Monday)
 
