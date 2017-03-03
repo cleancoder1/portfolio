@@ -1,5 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-24T13:25:15-06:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
-</subtitle><entry><title type="html">Workout and Food log</title><link href="http://localhost:4000/fitness/2017/02/24/WorkoutJournal.html" rel="alternate" type="text/html" title="Workout and Food log" /><published>2017-02-24T11:06:23-06:00</published><updated>2017-02-24T11:06:23-06:00</updated><id>http://localhost:4000/fitness/2017/02/24/WorkoutJournal</id><content type="html" xml:base="http://localhost:4000/fitness/2017/02/24/WorkoutJournal.html">&lt;h2 id=&quot;current-pr&quot;&gt;Current PR&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-03T14:09:26-06:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+</subtitle><entry><title type="html">Week Retrospective</title><link href="http://localhost:4000/java/2017/02/27/WeekRetrospective.html" rel="alternate" type="text/html" title="Week Retrospective" /><published>2017-02-27T11:06:23-06:00</published><updated>2017-02-27T11:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/27/WeekRetrospective</id><content type="html" xml:base="http://localhost:4000/java/2017/02/27/WeekRetrospective.html">&lt;p&gt;Cost of food in a week&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Date&lt;/td&gt;
+      &lt;td&gt;Amount&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Feb22&lt;/td&gt;
+      &lt;td&gt;15$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Feb 23&lt;/td&gt;
+      &lt;td&gt;15$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Feb 24&lt;/td&gt;
+      &lt;td&gt;13$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Feb 25&lt;/td&gt;
+      &lt;td&gt;27$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Feb 26&lt;/td&gt;
+      &lt;td&gt;23$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Feb 27&lt;/td&gt;
+      &lt;td&gt;14$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;103 $ for food Outside beside grocery cost and drinks&lt;/p&gt;
+
+&lt;p&gt;Goal for next week 
+50$ food outside&lt;/p&gt;</content><summary type="html">Cost of food in a week</summary></entry><entry><title type="html">Workout and Food log</title><link href="http://localhost:4000/java/2017/02/27/WorkoutJournal.html" rel="alternate" type="text/html" title="Workout and Food log" /><published>2017-02-27T11:06:23-06:00</published><updated>2017-02-27T11:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/27/WorkoutJournal</id><content type="html" xml:base="http://localhost:4000/java/2017/02/27/WorkoutJournal.html">&lt;h2 id=&quot;current-pr&quot;&gt;Current PR&lt;/h2&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -24,28 +62,129 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&quot;date-24-feb&quot;&gt;Date 24 Feb&lt;/h2&gt;
-
-&lt;h3 id=&quot;workout-log&quot;&gt;Workout log&lt;/h3&gt;
-&lt;p&gt;0.5 miles on treadmill  6 min 22 sec&lt;/p&gt;
+&lt;h2 id=&quot;date-1st-march-wed&quot;&gt;Date 1st March (WED)&lt;/h2&gt;
 
 &lt;h3 id=&quot;food-log&quot;&gt;Food log&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;1 Boiled egg white&lt;/li&gt;
-  &lt;li&gt;1 company kitchen capachino&lt;/li&gt;
-  &lt;li&gt;Foot log veg Quazino sub and brocoholi cheddar soup&lt;/li&gt;
+  &lt;li&gt;Kind bar&lt;/li&gt;
+  &lt;li&gt;Pesto shrimp wrap and salad from noodle zoo&lt;/li&gt;
+  &lt;li&gt;Peanut&lt;/li&gt;
+  &lt;li&gt;Vegetable pulao and 1 boiled egg&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;date-23-feb&quot;&gt;Date 23 Feb&lt;/h2&gt;
+&lt;h3 id=&quot;workout-log&quot;&gt;Workout log&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Strict press 10  rep * 3 rounds  75 pounds&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Strict press  5 rep * 7rounds     80 pounds&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;2- 4 -6 -8-10-12-14-16 -18 push press 65 pounds&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2- 4 -6 -8-10-12-14-16 -12 box jumps&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;10ish sledge pulls&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;strict press seemed harder than last week ,felt tired overall in the workout&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;date-28-feb-tuesday&quot;&gt;Date 28 Feb (Tuesday)&lt;/h2&gt;
+
+&lt;h3 id=&quot;food-log-1&quot;&gt;Food log&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Company Kitchen Capachinno&lt;/li&gt;
+  &lt;li&gt;Tuna sandwitch&lt;/li&gt;
+  &lt;li&gt;chicken thali&lt;/li&gt;
+  &lt;li&gt;capaciino lunch&lt;/li&gt;
+  &lt;li&gt;Pad thai (banana leaf)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;date-27-feb-monday&quot;&gt;Date 27 Feb (Monday)&lt;/h2&gt;
 
 &lt;h3 id=&quot;workout-log-1&quot;&gt;Workout log&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;3* 10  155 # back squats (65%)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3* 5  180 # back swau ( 75%)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;800 meter run + 55 thrusters with 65# 15 minutes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;food-log-2&quot;&gt;Food log&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;No breakfast&lt;/li&gt;
+  &lt;li&gt;1 company kitchen capachinno&lt;/li&gt;
+  &lt;li&gt;Preso shrimp wrap with salad from noodle zoo&lt;/li&gt;
+  &lt;li&gt;starbucks grande capachinno&lt;/li&gt;
+  &lt;li&gt;whole foods salad&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;date-26-feb-sunday&quot;&gt;Date 26 Feb (Sunday)&lt;/h2&gt;
+
+&lt;h3 id=&quot;food-log-3&quot;&gt;Food log&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;1 Boiled egg&lt;/li&gt;
+  &lt;li&gt;2 coke&lt;/li&gt;
+  &lt;li&gt;capachinno from scootors&lt;/li&gt;
+  &lt;li&gt;banana leaf fried rice&lt;/li&gt;
+  &lt;li&gt;Green machine&lt;/li&gt;
+  &lt;li&gt;Egg fried Rice&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;date-25-feb-saturday&quot;&gt;Date 25 Feb (Saturday)&lt;/h2&gt;
+
+&lt;h3 id=&quot;workout-log-2&quot;&gt;Workout log&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;100-80-60-40-20&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;air squats&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;50-40-30-20-10&lt;/li&gt;
+  &lt;li&gt;box jump overs&lt;/li&gt;
+  &lt;li&gt;push press 65 pounds&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;*1 complete set + 200&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;5*5 bench press at 95#&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;food-log-4&quot;&gt;Food log&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2 Eggs omlet&lt;/li&gt;
+  &lt;li&gt;masala dosa and p from india market&lt;/li&gt;
+  &lt;li&gt;Chicken Fried rice from bamboo leaf&lt;/li&gt;
+  &lt;li&gt;Chicken thali from india market&lt;/li&gt;
+  &lt;li&gt;coke&lt;/li&gt;
+  &lt;li&gt;coke and Rl&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;date-24-feb-friday&quot;&gt;Date 24 Feb (Friday)&lt;/h2&gt;
+
+&lt;h3 id=&quot;workout-log-3&quot;&gt;Workout log&lt;/h3&gt;
+&lt;p&gt;0.5 miles on treadmill  6 min 22 sec&lt;/p&gt;
+
+&lt;h3 id=&quot;food-log-5&quot;&gt;Food log&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;1 Boiled egg white&lt;/li&gt;
+  &lt;li&gt;1 company kitchen capachino&lt;/li&gt;
+  &lt;li&gt;1 footlong quazinno sub&lt;/li&gt;
+  &lt;li&gt;mutter panner with rice&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;date-23-feb-thursday&quot;&gt;Date 23 Feb (Thursday)&lt;/h2&gt;
+
+&lt;h3 id=&quot;workout-log-4&quot;&gt;workout log&lt;/h3&gt;
 &lt;p&gt;yoga workshop ply&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;shin to foot&lt;/li&gt;
   &lt;li&gt;shin to foot pop (need to try again)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;food-log-1&quot;&gt;Food log&lt;/h3&gt;
+&lt;h3 id=&quot;food-log-6&quot;&gt;Food log&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;1 companey kitchen capachinno&lt;/li&gt;
@@ -55,16 +194,16 @@
   &lt;li&gt;Paneer curry and pulao rice, yogurt&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;date-22-feb&quot;&gt;Date 22 Feb&lt;/h2&gt;
+&lt;h2 id=&quot;date-22-feb-wednesday&quot;&gt;Date 22 Feb (Wednesday)&lt;/h2&gt;
 
-&lt;h3 id=&quot;workout-log-2&quot;&gt;Workout log&lt;/h3&gt;
+&lt;h3 id=&quot;workout-log-5&quot;&gt;Workout log&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Strict press 10  rep * 3 rounds  75 pounds&lt;/li&gt;
   &lt;li&gt;Strict press  5 rep * 7rounds     80 pounds&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;10 Rounds of&lt;/p&gt;
+&lt;p&gt;10 rounds of&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;65 pound thrusters&lt;/li&gt;
@@ -81,7 +220,7 @@ Finished in 15 minutes&lt;/li&gt;
   &lt;li&gt;peanuts from company kitchen&lt;/li&gt;
   &lt;li&gt;1 banana post workout&lt;/li&gt;
   &lt;li&gt;Apple Juice&lt;/li&gt;
-  &lt;li&gt;pulao rice and shrimp curry leftover&lt;/li&gt;
+  &lt;li&gt;pulao rice and shrimp curry leftov&lt;/li&gt;
 &lt;/ul&gt;</content><summary type="html">Current PR</summary></entry><entry><title type="html">fridge</title><link href="http://localhost:4000/2017/02/23/nutrition.html" rel="alternate" type="text/html" title="fridge" /><published>2017-02-23T00:00:00-06:00</published><updated>2017-02-23T00:00:00-06:00</updated><id>http://localhost:4000/2017/02/23/nutrition</id><content type="html" xml:base="http://localhost:4000/2017/02/23/nutrition.html">&lt;p&gt;whats in my fridge&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/FridgeFeb23.jpeg&quot; alt=&quot;bmy fridge&quot; /&gt;&lt;/p&gt;

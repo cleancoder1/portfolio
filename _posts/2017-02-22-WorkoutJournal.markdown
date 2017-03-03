@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Workout and Food log"
-date:   2017-02-27 11:06:23 -0600
+date:   2099-12-31 11:06:23 -0600
 categories: Java
 ---
 
@@ -14,12 +14,38 @@ categories: Java
 |Back Squat | 240 |
 
 
+
+## Date 2nd March (WED)
+
+### Food log
+* Kind bar
+* Pesto shrimp wrap and salad from noodle zoo
+* Peanut
+* Vegetable pulao
+
+### Yoga
+
+* back bird
+* Candle stick
+*
+
+ * 2- 4 -6 -8-10-12-14-16 -18 push press 65 pounds
+ * 2- 4 -6 -8-10-12-14-16 -12 box jumps
+
+ * 10ish sledge pulls
+
+ * strict press seemed harder than last week ,felt tired overall in the workout
+
+
+
+
+
 ## Date 1st March (WED)
 
 ### Food log
 * Kind bar
 * Pesto shrimp wrap and salad from noodle zoo
-* Peanut 
+* Peanut
 * Vegetable pulao and 1 boiled egg
 
 ### Workout log
@@ -27,11 +53,11 @@ categories: Java
 * Strict press 10  rep * 3 rounds  75 pounds
 * Strict press  5 rep * 7rounds     80 pounds
 
- * 2- 4 -6 -8-10-12-14-16 -18 push press 65 pounds 
+ * 2- 4 -6 -8-10-12-14-16 -18 push press 65 pounds
  * 2- 4 -6 -8-10-12-14-16 -12 box jumps
- 
+
  * 10ish sledge pulls
- 
+
  * strict press seemed harder than last week ,felt tired overall in the workout
 
 
@@ -128,7 +154,7 @@ categories: Java
 ### Food log
 
 * 1 companey kitchen capachinno
-* 1 kind bar 
+* 1 kind bar
 * 1 chicken thali for lunch
 * 1 decaf
 * Paneer curry and pulao rice, yogurt
@@ -142,18 +168,18 @@ categories: Java
 * Strict press 10  rep * 3 rounds  75 pounds
 * Strict press  5 rep * 7rounds     80 pounds
 
-10 rounds of 
+10 rounds of
 
 * 65 pound thrusters
-* 10 push ups 
+* 10 push ups
 Finished in 15 minutes
 
 
-### Food Journal 
+### Food Journal
 
 * 1 boiled egg
 * 1 veg thali for lunch
-* 1 kind bar for snack 
+* 1 kind bar for snack
 * peanuts from company kitchen
 * 1 banana post workout
 * Apple Juice
