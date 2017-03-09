@@ -1,0 +1,12 @@
+<p>Git Deleting branches</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c1">#Listing all branches</span>
+git branch -a
+<span class="c1">#Local Branch Deleting</span>
+git branch -D  branchName
+
+<span class="c1">#Deleting origin branches one go</span>
+git push origin :InvoiceSummaryDefectFix  :InvoiceSummaryForMultiInvoices
+
+git fetch --all --prune</code></pre></figure>
+
