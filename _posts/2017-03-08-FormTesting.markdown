@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Effective Java!"
-date:   2017-03-08 21:06:23 -0600
+date:   2017-03-08 11:06:23 -0600
 categories: Java
 ---
 Item 1
