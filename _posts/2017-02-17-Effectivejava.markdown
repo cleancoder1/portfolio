@@ -9,7 +9,8 @@ categories: Java
 
  * More meaningful name than constructor  BigInteger.probablePrime
  * Compact APi like Collections , 32 classes
- * EnumSet example mutliple implementations and client need not know which is returned.
+ * Unlike constructor can return a subType.
+  EnumSet example mutliple implementations and client need not know which is returned.
  * The returned object might not even be there when writing code, such loose coupling is seen serve provider api's
  service provider api , the object returned may not be even there
 
@@ -24,7 +25,7 @@ categories: Java
 
 
 
-# Item 3 	Enforce Signleton pattern with a private constructor or an enum type
+# Item 3 	Enforce Singleton pattern with a private constructor or an enum type
 
 *	private constructor and static factory method to create a Singelton
 * A single-element enum type provides serialization for free
