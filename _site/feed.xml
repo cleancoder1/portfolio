@@ -1,55 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-17T17:05:25-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
-</subtitle><entry><title type="html">Week Retrospective</title><link href="http://localhost:4000/java/2017/02/27/WeekRetrospective.html" rel="alternate" type="text/html" title="Week Retrospective" /><published>2017-02-27T11:06:23-06:00</published><updated>2017-02-27T11:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/27/WeekRetrospective</id><content type="html" xml:base="http://localhost:4000/java/2017/02/27/WeekRetrospective.html">&lt;p&gt;Cost of food in a week&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Date&lt;/td&gt;
-      &lt;td&gt;Amount&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Feb22&lt;/td&gt;
-      &lt;td&gt;15$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Feb 23&lt;/td&gt;
-      &lt;td&gt;15$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Feb 24&lt;/td&gt;
-      &lt;td&gt;13$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Feb 25&lt;/td&gt;
-      &lt;td&gt;27$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Feb 26&lt;/td&gt;
-      &lt;td&gt;23$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Feb 27&lt;/td&gt;
-      &lt;td&gt;14$&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;103 $ for food Outside beside grocery cost and drinks&lt;/p&gt;
-
-&lt;p&gt;Goal for next week 
-50$ food outside&lt;/p&gt;</content><summary type="html">Cost of food in a week</summary></entry><entry><title type="html">fridge</title><link href="http://localhost:4000/2017/02/23/nutrition.html" rel="alternate" type="text/html" title="fridge" /><published>2017-02-23T00:00:00-06:00</published><updated>2017-02-23T00:00:00-06:00</updated><id>http://localhost:4000/2017/02/23/nutrition</id><content type="html" xml:base="http://localhost:4000/2017/02/23/nutrition.html">&lt;p&gt;whats in my fridge&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/FridgeFeb23.jpeg&quot; alt=&quot;bmy fridge&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;yogurt&lt;/li&gt;
-  &lt;li&gt;soy milk&lt;/li&gt;
-  &lt;li&gt;eggs&lt;/li&gt;
-  &lt;li&gt;pineapple&lt;/li&gt;
-  &lt;li&gt;spinash&lt;/li&gt;
-  &lt;li&gt;avacado&lt;/li&gt;
-  &lt;li&gt;tomatoes&lt;/li&gt;
-&lt;/ul&gt;</content><summary type="html">whats in my fridge</summary></entry><entry><title type="html">Git Cheat Sheet</title><link href="http://localhost:4000/java/2017/02/17/GItCheatSheet.html" rel="alternate" type="text/html" title="Git Cheat Sheet" /><published>2017-02-17T21:06:23-06:00</published><updated>2017-02-17T21:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/17/GItCheatSheet</id><content type="html" xml:base="http://localhost:4000/java/2017/02/17/GItCheatSheet.html">&lt;p&gt;Git Deleting branches&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-04T14:00:27-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+</subtitle><entry><title type="html">Git Cheat Sheet</title><link href="http://localhost:4000/java/2017/02/17/GItCheatSheet.html" rel="alternate" type="text/html" title="Git Cheat Sheet" /><published>2017-02-17T21:06:23-06:00</published><updated>2017-02-17T21:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/17/GItCheatSheet</id><content type="html" xml:base="http://localhost:4000/java/2017/02/17/GItCheatSheet.html">&lt;p&gt;Git Deleting branches&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Listing all branches&lt;/span&gt;
 git branch -a
@@ -59,12 +9,4 @@ git branch -D  branchName
 &lt;span class=&quot;c1&quot;&gt;#Deleting origin branches one go&lt;/span&gt;
 git push origin :InvoiceSummaryDefectFix  :InvoiceSummaryForMultiInvoices
 
-git fetch --all --prune&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><summary type="html">Git Deleting branches</summary></entry><entry><title type="html">Effective Java!</title><link href="http://localhost:4000/java/2017/02/17/Effectivejava.html" rel="alternate" type="text/html" title="Effective Java!" /><published>2017-02-17T21:06:23-06:00</published><updated>2017-02-17T21:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/17/Effectivejava</id><content type="html" xml:base="http://localhost:4000/java/2017/02/17/Effectivejava.html">&lt;p&gt;Item 1&lt;/p&gt;
-
-&lt;p&gt;Item 33 
-EnumMap&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Provider&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><summary type="html">Item 1</summary></entry></feed>
+git fetch --all --prune&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><summary type="html">Git Deleting branches</summary></entry></feed>
