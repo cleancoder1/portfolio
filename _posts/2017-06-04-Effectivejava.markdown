@@ -57,20 +57,20 @@ public class Services {
 
 * An instance-controlled class is one that uses static factories to strictly control what instances exist at any time.
 
-# Item 2 Consider a builder when faced with many constructor parameters
+# Item 2: Consider a builder when faced with many constructor parameters
 
 * Avoids telescopic conttructor pattern
 
 
 
-# Item 3 	Enforce Singleton pattern with a private constructor or an enum type
+# Item 3:	Enforce Singleton pattern with a private constructor or an enum type
 
 *	private constructor and static factory method to create a Singleton
 * Adding implements serializable to singleton is not enough, you must declare all fields transient and provide a readResolve method.
 * A single-element enum type provides serialization for free
 
 
-# Item 4 Enforce Noninstantiability with a private constructor
+# Item 4: Enforce Noninstantiability with a private constructor
 
 * No reason to have utility classes instantiable
 
@@ -86,13 +86,52 @@ public class UtilityClass {
 
 
 
-# Item 5 Avoid creating unnecessary Objects
+# Item 5: Avoid creating unnecessary Objects
 
 * you can often avoid creating unnecessary objects by using static factory methods in preference to constructor on immutable classes that provide both.
-
+* "hello" is better than new String("hello")
+* Boolean.valueOf("true") is better than new Boolean("true")
+* Immutable objects could be reused for free
+* Mutable objects could be reused if you really sure, they won’t be modified
 * KeySet method of the Map interface returns a Set view of the Map Object, consisting of all the keys in the map. Every call to keyset on a given map returns same Set instance. Although retuned
 
 * prefer primitivates to boxed primitives and watch out for unintenstional autoboxing.
+
+
+
+# Item  6: Eliminate obsolete object references
+
+* Nullify obsolete references
+{% highlight java %}
+public class Stack {
+  private Object[] elements;
+  private int size = 0;
+  private static final int DEFAULT_INITIAL_CAPACITY = 16;
+  public Stack() {
+    elements = new Object[DEFAULT_INITIAL_CAPACITY];
+  }
+  public void push(Object e) {
+    ensureCapacity();
+    elements[size++] = e;
+  }
+  public Object pop() {
+    if (size == 0)
+    throw new EmptyStackException();
+    return elements[--size];
+  }
+  // Ensure space for at least one more element, roughly doubling the capacity each time the array needs to grow
+  private void ensureCapacity() {
+    if (elements.length == size)
+    elements = Arrays.copyOf(elements, 2 * size + 1);
+  }
+}
+{% endhighlight %}
+
+* If a stack grows and then shrinks, the objects that were popped off the stack will not be garbage collected, even if the program using the stack has no more references to them. This is because the stack maintains obsolete references to these objects.
+
+* Whenever a class manages its own memory, the programmer should be alert for memory leaks.
+
+* Deregister outdated listeners and callbacks
 
 
 # Item 33

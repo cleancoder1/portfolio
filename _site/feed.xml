@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-05T10:09:10-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-05T15:55:13-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
 </subtitle><entry><title type="html">Effective Java</title><link href="http://localhost:4000/java/2017/06/04/Effectivejava.html" rel="alternate" type="text/html" title="Effective Java" /><published>2017-06-04T22:06:23-05:00</published><updated>2017-06-04T22:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/04/Effectivejava</id><content type="html" xml:base="http://localhost:4000/java/2017/06/04/Effectivejava.html">&lt;h1 id=&quot;item-1-consider-static-factories-instead-of-constructors&quot;&gt;Item 1: Consider static factories instead of constructors&lt;/h1&gt;
 
 &lt;ul&gt;
@@ -53,13 +53,13 @@
   &lt;li&gt;An instance-controlled class is one that uses static factories to strictly control what instances exist at any time.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;item-2-consider-a-builder-when-faced-with-many-constructor-parameters&quot;&gt;Item 2 Consider a builder when faced with many constructor parameters&lt;/h1&gt;
+&lt;h1 id=&quot;item-2-consider-a-builder-when-faced-with-many-constructor-parameters&quot;&gt;Item 2: Consider a builder when faced with many constructor parameters&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Avoids telescopic conttructor pattern&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;item-3--enforce-singleton-pattern-with-a-private-constructor-or-an-enum-type&quot;&gt;Item 3 	Enforce Singleton pattern with a private constructor or an enum type&lt;/h1&gt;
+&lt;h1 id=&quot;item-3-enforce-singleton-pattern-with-a-private-constructor-or-an-enum-type&quot;&gt;Item 3:	Enforce Singleton pattern with a private constructor or an enum type&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;private constructor and static factory method to create a Singleton&lt;/li&gt;
@@ -67,7 +67,7 @@
   &lt;li&gt;A single-element enum type provides serialization for free&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;item-4-enforce-noninstantiability-with-a-private-constructor&quot;&gt;Item 4 Enforce Noninstantiability with a private constructor&lt;/h1&gt;
+&lt;h1 id=&quot;item-4-enforce-noninstantiability-with-a-private-constructor&quot;&gt;Item 4: Enforce Noninstantiability with a private constructor&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;No reason to have utility classes instantiable&lt;/li&gt;
@@ -80,17 +80,58 @@
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h1 id=&quot;item-5-avoid-creating-unnecessary-objects&quot;&gt;Item 5 Avoid creating unnecessary Objects&lt;/h1&gt;
+&lt;h1 id=&quot;item-5-avoid-creating-unnecessary-objects&quot;&gt;Item 5: Avoid creating unnecessary Objects&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;you can often avoid creating unnecessary objects by using static factory methods in preference to constructor on immutable classes that provide both.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;you can often avoid creating unnecessary objects by using static factory methods in preference to constructor on immutable classes that provide both.&lt;/li&gt;
+  &lt;li&gt;“hello” is better than new String(“hello”)&lt;/li&gt;
+  &lt;li&gt;Boolean.valueOf(“true”) is better than new Boolean(“true”)&lt;/li&gt;
+  &lt;li&gt;Immutable objects could be reused for free&lt;/li&gt;
+  &lt;li&gt;Mutable objects could be reused if you really sure, they won’t be modified&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;KeySet method of the Map interface returns a Set view of the Map Object, consisting of all the keys in the map. Every call to keyset on a given map returns same Set instance. Although retuned&lt;/p&gt;
   &lt;/li&gt;
+  &lt;li&gt;prefer primitivates to boxed primitives and watch out for unintenstional autoboxing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;item--6-eliminate-obsolete-object-references&quot;&gt;Item  6: Eliminate obsolete object references&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Nullify obsolete references&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Stack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elements&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DEFAULT_INITIAL_CAPACITY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;elements&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEFAULT_INITIAL_CAPACITY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ensureCapacity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;elements&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;EmptyStackException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elements&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Ensure space for at least one more element, roughly doubling the capacity each time the array needs to grow&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ensureCapacity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elements&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;elements&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;copyOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elements&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;prefer primitivates to boxed primitives and watch out for unintenstional autoboxing.&lt;/p&gt;
+    &lt;p&gt;If a stack grows and then shrinks, the objects that were popped off the stack will not be garbage collected, even if the program using the stack has no more references to them. This is because the stack maintains obsolete references to these objects.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Whenever a class manages its own memory, the programmer should be alert for memory leaks.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deregister outdated listeners and callbacks&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 

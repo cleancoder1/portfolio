@@ -120,13 +120,13 @@
   <li>An instance-controlled class is one that uses static factories to strictly control what instances exist at any time.</li>
 </ul>
 
-<h1 id="item-2-consider-a-builder-when-faced-with-many-constructor-parameters">Item 2 Consider a builder when faced with many constructor parameters</h1>
+<h1 id="item-2-consider-a-builder-when-faced-with-many-constructor-parameters">Item 2: Consider a builder when faced with many constructor parameters</h1>
 
 <ul>
   <li>Avoids telescopic conttructor pattern</li>
 </ul>
 
-<h1 id="item-3--enforce-singleton-pattern-with-a-private-constructor-or-an-enum-type">Item 3 	Enforce Singleton pattern with a private constructor or an enum type</h1>
+<h1 id="item-3-enforce-singleton-pattern-with-a-private-constructor-or-an-enum-type">Item 3:	Enforce Singleton pattern with a private constructor or an enum type</h1>
 
 <ul>
   <li>private constructor and static factory method to create a Singleton</li>
@@ -134,7 +134,7 @@
   <li>A single-element enum type provides serialization for free</li>
 </ul>
 
-<h1 id="item-4-enforce-noninstantiability-with-a-private-constructor">Item 4 Enforce Noninstantiability with a private constructor</h1>
+<h1 id="item-4-enforce-noninstantiability-with-a-private-constructor">Item 4: Enforce Noninstantiability with a private constructor</h1>
 
 <ul>
   <li>No reason to have utility classes instantiable</li>
@@ -147,17 +147,58 @@
   <span class="o">}</span>
 <span class="o">}</span></code></pre></figure>
 
-<h1 id="item-5-avoid-creating-unnecessary-objects">Item 5 Avoid creating unnecessary Objects</h1>
+<h1 id="item-5-avoid-creating-unnecessary-objects">Item 5: Avoid creating unnecessary Objects</h1>
 
 <ul>
-  <li>
-    <p>you can often avoid creating unnecessary objects by using static factory methods in preference to constructor on immutable classes that provide both.</p>
-  </li>
+  <li>you can often avoid creating unnecessary objects by using static factory methods in preference to constructor on immutable classes that provide both.</li>
+  <li>“hello” is better than new String(“hello”)</li>
+  <li>Boolean.valueOf(“true”) is better than new Boolean(“true”)</li>
+  <li>Immutable objects could be reused for free</li>
+  <li>Mutable objects could be reused if you really sure, they won’t be modified</li>
   <li>
     <p>KeySet method of the Map interface returns a Set view of the Map Object, consisting of all the keys in the map. Every call to keyset on a given map returns same Set instance. Although retuned</p>
   </li>
+  <li>prefer primitivates to boxed primitives and watch out for unintenstional autoboxing.</li>
+</ul>
+
+<h1 id="item--6-eliminate-obsolete-object-references">Item  6: Eliminate obsolete object references</h1>
+
+<ul>
+  <li>Nullify obsolete references</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Stack</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="n">Object</span><span class="o">[]</span> <span class="n">elements</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAULT_INITIAL_CAPACITY</span> <span class="o">=</span> <span class="mi">16</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nf">Stack</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">elements</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[</span><span class="n">DEFAULT_INITIAL_CAPACITY</span><span class="o">];</span>
+  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">push</span><span class="o">(</span><span class="n">Object</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">ensureCapacity</span><span class="o">();</span>
+    <span class="n">elements</span><span class="o">[</span><span class="n">size</span><span class="o">++]</span> <span class="o">=</span> <span class="n">e</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="kd">public</span> <span class="n">Object</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">EmptyStackException</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">elements</span><span class="o">[--</span><span class="n">size</span><span class="o">];</span>
+  <span class="o">}</span>
+  <span class="c1">// Ensure space for at least one more element, roughly doubling the capacity each time the array needs to grow</span>
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">ensureCapacity</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">elements</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">size</span><span class="o">)</span>
+    <span class="n">elements</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">elements</span><span class="o">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">size</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<ul>
   <li>
-    <p>prefer primitivates to boxed primitives and watch out for unintenstional autoboxing.</p>
+    <p>If a stack grows and then shrinks, the objects that were popped off the stack will not be garbage collected, even if the program using the stack has no more references to them. This is because the stack maintains obsolete references to these objects.</p>
+  </li>
+  <li>
+    <p>Whenever a class manages its own memory, the programmer should be alert for memory leaks.</p>
+  </li>
+  <li>
+    <p>Deregister outdated listeners and callbacks</p>
   </li>
 </ul>
 
