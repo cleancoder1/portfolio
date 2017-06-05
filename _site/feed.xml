@@ -1,5 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-04T14:00:27-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
-</subtitle><entry><title type="html">Git Cheat Sheet</title><link href="http://localhost:4000/java/2017/02/17/GItCheatSheet.html" rel="alternate" type="text/html" title="Git Cheat Sheet" /><published>2017-02-17T21:06:23-06:00</published><updated>2017-02-17T21:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/17/GItCheatSheet</id><content type="html" xml:base="http://localhost:4000/java/2017/02/17/GItCheatSheet.html">&lt;p&gt;Git Deleting branches&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-05T09:55:16-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+</subtitle><entry><title type="html">Effective Java</title><link href="http://localhost:4000/java/2017/06/04/Effectivejava.html" rel="alternate" type="text/html" title="Effective Java" /><published>2017-06-04T22:06:23-05:00</published><updated>2017-06-04T22:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/04/Effectivejava</id><content type="html" xml:base="http://localhost:4000/java/2017/06/04/Effectivejava.html">&lt;h1 id=&quot;item-1-consider-static-factories-instead-of-constructors&quot;&gt;Item 1: Consider static factories instead of constructors&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;More meaningful name than constructor  BigInteger.probablePrime&lt;/li&gt;
+  &lt;li&gt;Compact APi like Collections , 32 classes&lt;/li&gt;
+  &lt;li&gt;Unlike constructor can return a subType.
+  EnumSet example mutliple implementations and client need not know which is returned.&lt;/li&gt;
+  &lt;li&gt;The returned object might not even be there when writing code, such loose coupling is seen serve provider api’s
+ service provider api , the object returned may not be even there&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Service Api ,Provider APi  ,provider registration api ,service access api
+  Analogy to jdbc Connection =&amp;gt; Service api         DriverManager.register  DriverManger.getConnection&lt;/p&gt;
+
+&lt;h1 id=&quot;item-2-consider-a-builder-when-faced-with-many-constructor-parameters&quot;&gt;Item 2 Consider a builder when faced with many constructor parameters&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Avoids telescopic conttructor pattern&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;item-3--enforce-singleton-pattern-with-a-private-constructor-or-an-enum-type&quot;&gt;Item 3 	Enforce Singleton pattern with a private constructor or an enum type&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;private constructor and static factory method to create a Singleton&lt;/li&gt;
+  &lt;li&gt;A single-element enum type provides serialization for free&lt;/li&gt;
+  &lt;li&gt;Adding implements serializable to singleton is not enough, you must declare all fields transient and provide a readResolve method.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;item-4-enforce-noninstantiability-with-a-private-constructor&quot;&gt;Item 4 Enforce Noninstantiability with a private constructor&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;No reason to have utility classes instantiable&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UtilityClass&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// suppress default constructor for non instantiability&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;UtilityClass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;AssertionError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//prevents someone in class accidentally initializing the constructor&lt;/span&gt;
+
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;item-5-avoid-creating-unnecessary-objects&quot;&gt;Item 5 Avoid creating unnecessary Objects&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;you can often avoid creating unnecessary objects by using static factory methods in preference to constructor on immutable classes that provide both.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;KeySet method of the Map interface returns a Set view of the Map Object, consisting of all the keys in the map. Every call to keyset on a given map returns same Set instance. Although retuned&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;prefer primitivates to boxed primitives and watch out for unintenstional autoboxing.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;item-33&quot;&gt;Item 33&lt;/h1&gt;
+&lt;p&gt;EnumMap&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Provider&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><summary type="html">Item 1: Consider static factories instead of constructors</summary></entry><entry><title type="html">Git Cheat Sheet</title><link href="http://localhost:4000/java/2017/02/17/GItCheatSheet.html" rel="alternate" type="text/html" title="Git Cheat Sheet" /><published>2017-02-17T21:06:23-06:00</published><updated>2017-02-17T21:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/17/GItCheatSheet</id><content type="html" xml:base="http://localhost:4000/java/2017/02/17/GItCheatSheet.html">&lt;p&gt;Git Deleting branches&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Listing all branches&lt;/span&gt;
 git branch -a
