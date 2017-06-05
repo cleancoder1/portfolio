@@ -70,15 +70,55 @@
 
 <ul>
   <li>More meaningful name than constructor  BigInteger.probablePrime</li>
-  <li>Compact APi like Collections , 32 classes</li>
+  <li>Compact API like Collections , 32 classes</li>
   <li>Unlike constructor can return a subType.
   EnumSet example mutliple implementations and client need not know which is returned.</li>
-  <li>The returned object might not even be there when writing code, such loose coupling is seen serve provider api’s
+  <li>The returned object might not even be there when writing code, such loose coupling is seen serve provider API’s
  service provider api , the object returned may not be even there</li>
 </ul>
 
-<p>Service Api ,Provider APi  ,provider registration api ,service access api
+<p>Service API ,Provider API  ,Provider registration api ,Service Access API
   Analogy to jdbc Connection =&gt; Service api         DriverManager.register  DriverManger.getConnection</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Service provider framework sketch</span>
+<span class="c1">// Service interface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Service</span> <span class="o">{</span>
+<span class="o">...</span> <span class="c1">// Service-specific methods go here</span>
+<span class="o">}</span>
+<span class="c1">// Service provider interface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Provider</span> <span class="o">{</span>
+  <span class="n">Service</span> <span class="nf">newService</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="c1">// Noninstantiable class for service registration and access</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Services</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="nf">Services</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span> <span class="c1">// Prevents instantiation (Item 4)</span>
+  <span class="c1">// Maps service names to services</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Provider</span><span class="o">&gt;</span> <span class="n">providers</span> <span class="o">=</span>  <span class="k">new</span> <span class="n">ConcurrentHashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Provider</span><span class="o">&gt;();</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DEFAULT_PROVIDER_NAME</span> <span class="o">=</span> <span class="s">"&lt;def&gt;"</span><span class="o">;</span>
+
+  <span class="c1">// Provider registration API</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">registerDefaultProvider</span><span class="o">(</span><span class="n">Provider</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">registerProvider</span><span class="o">(</span><span class="n">DEFAULT_PROVIDER_NAME</span><span class="o">,</span> <span class="n">p</span><span class="o">);</span>
+  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">registerProvider</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">Provider</span> <span class="n">p</span><span class="o">){</span>
+    <span class="n">providers</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">p</span><span class="o">);</span>
+  <span class="o">}</span>
+  <span class="c1">// Service access API</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Service</span> <span class="nf">newInstance</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nf">newInstance</span><span class="o">(</span><span class="n">DEFAULT_PROVIDER_NAME</span><span class="o">);</span>
+  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Service</span> <span class="nf">newInstance</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Provider</span> <span class="n">p</span> <span class="o">=</span> <span class="n">providers</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">p</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span>
+      <span class="s">"No provider registered with name: "</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
+      <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="na">newService</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<ul>
+  <li>An instance-controlled class is one that uses static factories to strictly control what instances exist at any time.</li>
+</ul>
 
 <h1 id="item-2-consider-a-builder-when-faced-with-many-constructor-parameters">Item 2 Consider a builder when faced with many constructor parameters</h1>
 
@@ -90,8 +130,8 @@
 
 <ul>
   <li>private constructor and static factory method to create a Singleton</li>
-  <li>A single-element enum type provides serialization for free</li>
   <li>Adding implements serializable to singleton is not enough, you must declare all fields transient and provide a readResolve method.</li>
+  <li>A single-element enum type provides serialization for free</li>
 </ul>
 
 <h1 id="item-4-enforce-noninstantiability-with-a-private-constructor">Item 4 Enforce Noninstantiability with a private constructor</h1>
@@ -104,9 +144,7 @@
   <span class="c1">// suppress default constructor for non instantiability</span>
 	<span class="kd">private</span> <span class="nf">UtilityClass</span><span class="o">(){</span>
       <span class="k">throw</span> <span class="k">new</span> <span class="nf">AssertionError</span><span class="o">();</span>  <span class="c1">//prevents someone in class accidentally initializing the constructor</span>
-
   <span class="o">}</span>
-
 <span class="o">}</span></code></pre></figure>
 
 <h1 id="item-5-avoid-creating-unnecessary-objects">Item 5 Avoid creating unnecessary Objects</h1>
