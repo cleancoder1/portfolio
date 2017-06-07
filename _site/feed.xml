@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-05T15:55:13-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
-</subtitle><entry><title type="html">Effective Java</title><link href="http://localhost:4000/java/2017/06/04/Effectivejava.html" rel="alternate" type="text/html" title="Effective Java" /><published>2017-06-04T22:06:23-05:00</published><updated>2017-06-04T22:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/04/Effectivejava</id><content type="html" xml:base="http://localhost:4000/java/2017/06/04/Effectivejava.html">&lt;h1 id=&quot;item-1-consider-static-factories-instead-of-constructors&quot;&gt;Item 1: Consider static factories instead of constructors&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-07T17:13:01-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+</subtitle><entry><title type="html">Effective Java</title><link href="http://localhost:4000/java/2017/06/04/Effectivejava.html" rel="alternate" type="text/html" title="Effective Java" /><published>2017-06-04T22:06:23-05:00</published><updated>2017-06-04T22:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/04/Effectivejava</id><content type="html" xml:base="http://localhost:4000/java/2017/06/04/Effectivejava.html">&lt;h2 id=&quot;creating-and-destroying-objects&quot;&gt;Creating and Destroying Objects&lt;/h2&gt;
+
+&lt;h1 id=&quot;item-1-consider-static-factories-instead-of-constructors&quot;&gt;Item 1: Consider static factories instead of constructors&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;More meaningful name than constructor  BigInteger.probablePrime&lt;/li&gt;
@@ -135,13 +137,42 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h1 id=&quot;item-7--avoid-finalizers&quot;&gt;Item 7  Avoid Finalizers&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Finalizers are unpredictable, often dangerous and generally unnecessary.&lt;/li&gt;
+  &lt;li&gt;It can take arbitararily long between the time than an object becomes unreachable and the time that its finalizer is executed.So never do time-criticial things
+ex :- depend on finalizer to close file.&lt;/li&gt;
+  &lt;li&gt;Use terminate methods like close on streams instead of finalizers&lt;/li&gt;
+  &lt;li&gt;Might work on your cpu java implementations but can behave differently in different jdk or OS&lt;/li&gt;
+  &lt;li&gt;chaining with super class is not default behavior ,you need to call super class finalizer method explicitly if a sub class overrides the class.&lt;/li&gt;
+  &lt;li&gt;Better to write an anonoymous inner class with finalizer  Finalizer guard class&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Finalizer Guardian idiom&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Sole purpose of this object is to finalize outer Foo object&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;finalizerGuardian&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;finalize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// Finalize outer Foo object&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+ &lt;span class=&quot;c1&quot;&gt;// Remainder omitted&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Finalizers act as safety net in cas the owner of an object forgets to call its explicit termination method.&lt;/li&gt;
+  &lt;li&gt;A second legitimate use of finalizers concerns objects with native peers. A native peer is a native object to which a normal object delegates via native methods.
+Because a native peer is not a normal object, the garbage collector doesn’t know about it and can’t reclaim it when its Java peer is reclaimed.&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h1 id=&quot;item-33&quot;&gt;Item 33&lt;/h1&gt;
 &lt;p&gt;EnumMap&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Provider&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
 	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><summary type="html">Item 1: Consider static factories instead of constructors</summary></entry><entry><title type="html">Git Cheat Sheet</title><link href="http://localhost:4000/java/2017/02/17/GItCheatSheet.html" rel="alternate" type="text/html" title="Git Cheat Sheet" /><published>2017-02-17T21:06:23-06:00</published><updated>2017-02-17T21:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/17/GItCheatSheet</id><content type="html" xml:base="http://localhost:4000/java/2017/02/17/GItCheatSheet.html">&lt;p&gt;Git Deleting branches&lt;/p&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><summary type="html">Creating and Destroying Objects</summary></entry><entry><title type="html">Git Cheat Sheet</title><link href="http://localhost:4000/java/2017/02/17/GItCheatSheet.html" rel="alternate" type="text/html" title="Git Cheat Sheet" /><published>2017-02-17T21:06:23-06:00</published><updated>2017-02-17T21:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/17/GItCheatSheet</id><content type="html" xml:base="http://localhost:4000/java/2017/02/17/GItCheatSheet.html">&lt;p&gt;Git Deleting branches&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Listing all branches&lt;/span&gt;
 git branch -a

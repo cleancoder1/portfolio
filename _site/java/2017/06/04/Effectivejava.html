@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Effective Java</title>
-  <meta name="description" content="Item 1: Consider static factories instead of constructors">
+  <meta name="description" content="Creating and Destroying Objects">
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="http://localhost:4000/java/2017/06/04/Effectivejava.html">
@@ -66,7 +66,9 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h1 id="item-1-consider-static-factories-instead-of-constructors">Item 1: Consider static factories instead of constructors</h1>
+    <h2 id="creating-and-destroying-objects">Creating and Destroying Objects</h2>
+
+<h1 id="item-1-consider-static-factories-instead-of-constructors">Item 1: Consider static factories instead of constructors</h1>
 
 <ul>
   <li>More meaningful name than constructor  BigInteger.probablePrime</li>
@@ -200,6 +202,35 @@
   <li>
     <p>Deregister outdated listeners and callbacks</p>
   </li>
+</ul>
+
+<h1 id="item-7--avoid-finalizers">Item 7  Avoid Finalizers</h1>
+
+<ul>
+  <li>Finalizers are unpredictable, often dangerous and generally unnecessary.</li>
+  <li>It can take arbitararily long between the time than an object becomes unreachable and the time that its finalizer is executed.So never do time-criticial things
+ex :- depend on finalizer to close file.</li>
+  <li>Use terminate methods like close on streams instead of finalizers</li>
+  <li>Might work on your cpu java implementations but can behave differently in different jdk or OS</li>
+  <li>chaining with super class is not default behavior ,you need to call super class finalizer method explicitly if a sub class overrides the class.</li>
+  <li>Better to write an anonoymous inner class with finalizer  Finalizer guard class</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Finalizer Guardian idiom</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>
+  <span class="c1">// Sole purpose of this object is to finalize outer Foo object</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">Object</span> <span class="n">finalizerGuardian</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span> <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">finalize</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
+      <span class="c1">// Finalize outer Foo object</span>
+    <span class="o">}</span>
+  <span class="o">};</span>
+ <span class="c1">// Remainder omitted</span>
+<span class="o">}</span></code></pre></figure>
+
+<ul>
+  <li>Finalizers act as safety net in cas the owner of an object forgets to call its explicit termination method.</li>
+  <li>A second legitimate use of finalizers concerns objects with native peers. A native peer is a native object to which a normal object delegates via native methods.
+Because a native peer is not a normal object, the garbage collector doesn’t know about it and can’t reclaim it when its Java peer is reclaimed.</li>
 </ul>
 
 <h1 id="item-33">Item 33</h1>

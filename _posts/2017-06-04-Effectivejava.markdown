@@ -5,6 +5,8 @@ date:   2017-06-04 21:06:23 -0600
 categories: Java
 ---
 
+## Creating and Destroying Objects
+
 # Item 1: Consider static factories instead of constructors
 
  * More meaningful name than constructor  BigInteger.probablePrime
@@ -133,6 +135,33 @@ public class Stack {
 
 * Deregister outdated listeners and callbacks
 
+
+
+# Item 7  Avoid Finalizers
+
+* Finalizers are unpredictable, often dangerous and generally unnecessary.
+* It can take arbitararily long between the time than an object becomes unreachable and the time that its finalizer is executed.So never do time-criticial things
+  ex :- depend on finalizer to close file.
+* Use terminate methods like close on streams instead of finalizers
+* Might work on your cpu java implementations but can behave differently in different jdk or OS
+* chaining with super class is not default behavior ,you need to call super class finalizer method explicitly if a sub class overrides the class.
+* Better to write an anonoymous inner class with finalizer  Finalizer guard class
+{% highlight java %}
+// Finalizer Guardian idiom
+public class Foo {
+  // Sole purpose of this object is to finalize outer Foo object
+  private final Object finalizerGuardian = new Object() {
+    @Override protected void finalize() throws Throwable {
+      // Finalize outer Foo object
+    }
+  };
+ // Remainder omitted
+}
+{% endhighlight %}
+
+* Finalizers act as safety net in cas the owner of an object forgets to call its explicit termination method.
+* A second legitimate use of finalizers concerns objects with native peers. A native peer is a native object to which a normal object delegates via native methods.
+Because a native peer is not a normal object, the garbage collector doesn’t know about it and can’t reclaim it when its Java peer is reclaimed.
 
 # Item 33
 EnumMap
