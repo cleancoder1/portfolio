@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-12T15:38:23-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-12T17:09:35-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
 </subtitle><entry><title type="html">Effective Java Chapter 3</title><link href="http://localhost:4000/java/2017/06/04/EffectiveJavaChapter3.html" rel="alternate" type="text/html" title="Effective Java Chapter 3" /><published>2017-06-04T22:06:23-05:00</published><updated>2017-06-04T22:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/04/EffectiveJavaChapter3</id><content type="html" xml:base="http://localhost:4000/java/2017/06/04/EffectiveJavaChapter3.html">&lt;h1 id=&quot;methods-common-to-all-objects&quot;&gt;Methods Common to All objects&lt;/h1&gt;
 
 &lt;h1 id=&quot;item-8--obey-the-general-contract-when-overriding-equals&quot;&gt;Item 8  Obey the general contract when overriding equals&lt;/h1&gt;
@@ -81,6 +81,18 @@
   &lt;li&gt;equal objects should end up in same hash bucket. even if they endup in same hashbucket ,hasmaps are&lt;/li&gt;
   &lt;li&gt;If a class is immutable and the cost of computing the hash code is significant,you might consider caching the hash code in the object rather than recalculating it
 each time it is requested&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;item-10-always-override-tostring&quot;&gt;Item 10 Always override toString&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When practical, the toString method should return all of the interesting information contained in the object&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The toString method is automatically invoked when an object is passed to println, printf, string concationation or assert or printed by debugger.
+Programmers will generate diagnostic messages&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Provide programmatic access to all of the information contained in the value returned by toString.
+By failing to provide accessors, you turn the string format into a de facto API, even if you’ve specified that it’s subject to change.&lt;/li&gt;
 &lt;/ul&gt;</content><summary type="html">Methods Common to All objects</summary></entry><entry><title type="html">Effective Java</title><link href="http://localhost:4000/java/2017/06/04/Effectivejava.html" rel="alternate" type="text/html" title="Effective Java" /><published>2017-06-04T22:06:23-05:00</published><updated>2017-06-04T22:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/04/Effectivejava</id><content type="html" xml:base="http://localhost:4000/java/2017/06/04/Effectivejava.html">&lt;h2 id=&quot;creating-and-destroying-objects&quot;&gt;Creating and Destroying Objects&lt;/h2&gt;
 
 &lt;h1 id=&quot;item-1-consider-static-factories-instead-of-constructors&quot;&gt;Item 1: Consider static factories instead of constructors&lt;/h1&gt;

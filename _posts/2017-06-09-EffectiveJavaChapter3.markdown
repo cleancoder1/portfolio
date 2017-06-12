@@ -82,3 +82,13 @@ m.get(new PhoneNumber(707, 867, 5309))  //you expect Jenney but you get null
  * equal objects should end up in same hash bucket. even if they endup in same hashbucket ,hasmaps are
 * If a class is immutable and the cost of computing the hash code is significant,you might consider caching the hash code in the object rather than recalculating it
 each time it is requested
+
+
+# Item 10 Always override toString
+
+* When practical, the toString method should return all of the interesting information contained in the object
+* The toString method is automatically invoked when an object is passed to println, printf, string concationation or assert or printed by debugger.
+  Programmers will generate diagnostic messages 
+
+* Provide programmatic access to all of the information contained in the value returned by toString.
+  By failing to provide accessors, you turn the string format into a de facto API, even if you’ve specified that it’s subject to change.
