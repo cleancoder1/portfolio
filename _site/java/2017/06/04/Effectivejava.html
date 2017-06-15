@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Effective Java</title>
-  <meta name="description" content="Creating and Destroying Objects">
+  <meta name="description" content="Effective java is a great book to hone your technical skills and a best investment you can make if you are a Java developer. This is just my notes , will be ...">
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="http://localhost:4000/java/2017/06/04/Effectivejava.html">
@@ -66,7 +66,13 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="creating-and-destroying-objects">Creating and Destroying Objects</h2>
+    <p>Effective java is a great book to hone your technical skills and a best investment you can make if you are a Java developer.</p>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ac&amp;ref=qf_sp_asin_til&amp;ad_type=product_link&amp;tracking_id=awesomeyogi-20&amp;marketplace=amazon&amp;region=US&amp;placement=0321356683&amp;asins=0321356683&amp;linkId=4bdd1e1a7678cada93ef0f5b806ad320&amp;show_border=false&amp;link_opens_in_new_window=false&amp;price_color=333333&amp;title_color=0066C0&amp;bg_color=FFFFFF">
+    </iframe>
+
+<p>This is just my notes , will be adding more notes as i go through the book.</p>
+<h2 id="creating-and-destroying-objects">Creating and Destroying Objects</h2>
 
 <h1 id="item-1-consider-static-factories-instead-of-constructors">Item 1: Consider static factories instead of constructors</h1>
 
@@ -235,7 +241,113 @@ Because a native peer is not a normal object, the garbage collector doesn’t kn
 
 <h1 id="methods-common-to-all-objects">Methods Common to All objects</h1>
 
-<h1 id="item-8">Item 8</h1>
+<h1 id="item-8--obey-the-general-contract-when-overriding-equals">Item 8  Obey the general contract when overriding equals</h1>
+
+<ul>
+  <li>No need to override the equals method
+    <ul>
+      <li>Each instance of the class is inherently unique</li>
+      <li>You don’t care whether the class provides a logical equality test ..Example Random class</li>
+      <li>A super class has already overriden the equals method and the super class behavior is appropriate.</li>
+      <li>The class is private or package private and you are certain that its equal method will never be invoked</li>
+    </ul>
+  </li>
+  <li>The equals method implements an equivalence relation
+    <ul>
+      <li>Reflexive</li>
+      <li>Symmetric</li>
+      <li>Transitive</li>
+      <li>Conistent</li>
+      <li>For any non-null reference  x.equals(null)  must return false</li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">// Broken - violates symmetry!</span>
+  <span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">CaseInsensitiveString</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">s</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">CaseInsensitiveString</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nf">NullPointerException</span><span class="o">();</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="c1">// Broken - violates symmetry!</span>
+    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">CaseInsensitiveString</span><span class="o">)</span>
+      <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span>
+        <span class="o">((</span><span class="n">CaseInsensitiveString</span><span class="o">)</span> <span class="n">o</span><span class="o">).</span><span class="na">s</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">String</span><span class="o">)</span> <span class="c1">// One-way interoperability!</span>
+        <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">((</span><span class="n">String</span><span class="o">)</span> <span class="n">o</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+  </code></pre></figure>
+
+<ul>
+  <li>Once you’ve violated the equals contract, you simply don’t know how other objects will behave when confronted with your object.</li>
+</ul>
+
+<h1 id="item-9-always-override-hashcode-when-you-override-equals">Item 9 Always override hashCode when you override equals</h1>
+
+<ul>
+  <li>equal objects needs to have equal hashcode</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">PhoneNumber</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">short</span> <span class="n">areaCode</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">short</span> <span class="n">prefix</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">short</span> <span class="n">lineNumber</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nf">PhoneNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">areaCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">prefix</span><span class="o">,</span><span class="kt">int</span> <span class="n">lineNumber</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">areaCode</span> <span class="o">=</span> <span class="o">(</span><span class="kt">short</span><span class="o">)</span> <span class="n">areaCode</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">prefix</span> <span class="o">=</span> <span class="o">(</span><span class="kt">short</span><span class="o">)</span> <span class="n">prefix</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">lineNumber</span> <span class="o">=</span> <span class="o">(</span><span class="kt">short</span><span class="o">)</span> <span class="n">lineNumber</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="o">==</span> <span class="k">this</span><span class="o">)</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(!(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="n">PhoneNumber</span><span class="o">))</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="n">PhoneNumber</span> <span class="n">pn</span> <span class="o">=</span> <span class="o">(</span><span class="n">PhoneNumber</span><span class="o">)</span><span class="n">o</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">pn</span><span class="o">.</span><span class="na">lineNumber</span> <span class="o">==</span> <span class="n">lineNumber</span>    <span class="o">&amp;&amp;</span> <span class="n">pn</span><span class="o">.</span><span class="na">prefix</span> <span class="o">==</span> <span class="n">prefix</span>    <span class="o">&amp;&amp;</span> <span class="n">pn</span><span class="o">.</span><span class="na">areaCode</span> <span class="o">==</span> <span class="n">areaCode</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="c1">//Broken no hashcode method</span>
+<span class="o">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Map</span><span class="o">&lt;</span><span class="n">PhoneNumber</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">PhoneNumber</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+<span class="n">m</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">PhoneNumber</span><span class="o">(</span><span class="mi">707</span><span class="o">,</span> <span class="mi">867</span><span class="o">,</span> <span class="mi">5309</span><span class="o">),</span> <span class="s">"Jenny"</span><span class="o">);</span>
+<span class="n">m</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="k">new</span> <span class="n">PhoneNumber</span><span class="o">(</span><span class="mi">707</span><span class="o">,</span> <span class="mi">867</span><span class="o">,</span> <span class="mi">5309</span><span class="o">))</span>  <span class="c1">//you expect Jenney but you get null</span></code></pre></figure>
+
+<ul>
+  <li>equal objects should end up in same hash bucket. even if they endup in same hashbucket ,hasmaps are</li>
+  <li>If a class is immutable and the cost of computing the hash code is significant,you might consider caching the hash code in the object rather than recalculating it
+each time it is requested</li>
+</ul>
+
+<h1 id="item-10-always-override-tostring">Item 10 Always override toString</h1>
+
+<ul>
+  <li>When practical, the toString method should return all of the interesting information contained in the object</li>
+  <li>The toString method is automatically invoked when an object is passed to println, printf, string concationation or assert or printed by debugger.
+Programmers will generate diagnostic messages</li>
+  <li>Provide programmatic access to all of the information contained in the value returned by toString.
+By failing to provide accessors, you turn the string format into a de facto API, even if you’ve specified that it’s subject to change.</li>
+</ul>
+
+<h1 id="item-11-clone">Item 11 Clone</h1>
+<ul>
+  <li>Mixin interface</li>
+  <li>Objects clone method is protected</li>
+  <li>deepCopy</li>
+</ul>
+
+<h1 id="item-12-consider-implementing-comparable">Item 12 Consider Implementing Comparable</h1>
+
+<ul>
+  <li>Just like equals contract equivalence relationship</li>
+  <li>if compareTo returns zero ,better be the objects equals if not specify with a comment</li>
+  <li>new BigDecimal(“0.0”) ,new BigDecimal(“0.00”) added to HashSet will maintain two objets as it invokes equals contract vs treeSet which maintains one as it invokes compareTo</li>
+  <li>Doesn’t tell magnitude -1 or -2 its upto programmer. The contract tells only negative and postive or zero</li>
+</ul>
 
   </div>
 
