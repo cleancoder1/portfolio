@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-12T17:09:35-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-15T16:30:04-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
 </subtitle><entry><title type="html">Effective Java Chapter 3</title><link href="http://localhost:4000/java/2017/06/04/EffectiveJavaChapter3.html" rel="alternate" type="text/html" title="Effective Java Chapter 3" /><published>2017-06-04T22:06:23-05:00</published><updated>2017-06-04T22:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/04/EffectiveJavaChapter3</id><content type="html" xml:base="http://localhost:4000/java/2017/06/04/EffectiveJavaChapter3.html">&lt;h1 id=&quot;methods-common-to-all-objects&quot;&gt;Methods Common to All objects&lt;/h1&gt;
 
 &lt;h1 id=&quot;item-8--obey-the-general-contract-when-overriding-equals&quot;&gt;Item 8  Obey the general contract when overriding equals&lt;/h1&gt;
@@ -87,12 +87,26 @@ each time it is requested&lt;/li&gt;
 
 &lt;ul&gt;
   &lt;li&gt;When practical, the toString method should return all of the interesting information contained in the object&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The toString method is automatically invoked when an object is passed to println, printf, string concationation or assert or printed by debugger.
-Programmers will generate diagnostic messages&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;The toString method is automatically invoked when an object is passed to println, printf, string concationation or assert or printed by debugger.
+Programmers will generate diagnostic messages&lt;/li&gt;
   &lt;li&gt;Provide programmatic access to all of the information contained in the value returned by toString.
 By failing to provide accessors, you turn the string format into a de facto API, even if you’ve specified that it’s subject to change.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;item-11-clone&quot;&gt;Item 11 Clone&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Mixin interface&lt;/li&gt;
+  &lt;li&gt;Objects clone method is protected&lt;/li&gt;
+  &lt;li&gt;deepCopy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;item-12-consider-implementing-comparable&quot;&gt;Item 12 Consider Implementing Comparable&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Just like equals contract equivalence relationship&lt;/li&gt;
+  &lt;li&gt;if compareTo returns zero ,better be the objects equals if not specify with a comment&lt;/li&gt;
+  &lt;li&gt;new BigDecimal(“0.0”) ,new BigDecimal(“0.00”) added to HashSet will maintain two objets as it invokes equals contract vs treeSet which maintains one as it invokes compareTo&lt;/li&gt;
+  &lt;li&gt;Doesn’t tell magnitude -1 or -2 its upto programmer. The contract tells only negative and postive or zero&lt;/li&gt;
 &lt;/ul&gt;</content><summary type="html">Methods Common to All objects</summary></entry><entry><title type="html">Effective Java</title><link href="http://localhost:4000/java/2017/06/04/Effectivejava.html" rel="alternate" type="text/html" title="Effective Java" /><published>2017-06-04T22:06:23-05:00</published><updated>2017-06-04T22:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/04/Effectivejava</id><content type="html" xml:base="http://localhost:4000/java/2017/06/04/Effectivejava.html">&lt;h2 id=&quot;creating-and-destroying-objects&quot;&gt;Creating and Destroying Objects&lt;/h2&gt;
 
 &lt;h1 id=&quot;item-1-consider-static-factories-instead-of-constructors&quot;&gt;Item 1: Consider static factories instead of constructors&lt;/h1&gt;
@@ -260,13 +274,9 @@ ex :- depend on finalizer to close file.&lt;/li&gt;
 Because a native peer is not a normal object, the garbage collector doesn’t know about it and can’t reclaim it when its Java peer is reclaimed.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;item-33&quot;&gt;Item 33&lt;/h1&gt;
-&lt;p&gt;EnumMap&lt;/p&gt;
+&lt;h1 id=&quot;methods-common-to-all-objects&quot;&gt;Methods Common to All objects&lt;/h1&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Provider&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><summary type="html">Creating and Destroying Objects</summary></entry><entry><title type="html">Git Cheat Sheet</title><link href="http://localhost:4000/java/2017/02/17/GItCheatSheet.html" rel="alternate" type="text/html" title="Git Cheat Sheet" /><published>2017-02-17T21:06:23-06:00</published><updated>2017-02-17T21:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/17/GItCheatSheet</id><content type="html" xml:base="http://localhost:4000/java/2017/02/17/GItCheatSheet.html">&lt;p&gt;Git Deleting branches&lt;/p&gt;
+&lt;h1 id=&quot;item-8&quot;&gt;Item 8&lt;/h1&gt;</content><summary type="html">Creating and Destroying Objects</summary></entry><entry><title type="html">Git Cheat Sheet</title><link href="http://localhost:4000/java/2017/02/17/GItCheatSheet.html" rel="alternate" type="text/html" title="Git Cheat Sheet" /><published>2017-02-17T21:06:23-06:00</published><updated>2017-02-17T21:06:23-06:00</updated><id>http://localhost:4000/java/2017/02/17/GItCheatSheet</id><content type="html" xml:base="http://localhost:4000/java/2017/02/17/GItCheatSheet.html">&lt;p&gt;Git Deleting branches&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#Listing all branches&lt;/span&gt;
 git branch -a

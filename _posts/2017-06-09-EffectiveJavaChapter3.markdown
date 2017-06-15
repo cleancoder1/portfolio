@@ -88,7 +88,19 @@ each time it is requested
 
 * When practical, the toString method should return all of the interesting information contained in the object
 * The toString method is automatically invoked when an object is passed to println, printf, string concationation or assert or printed by debugger.
-  Programmers will generate diagnostic messages 
-
+  Programmers will generate diagnostic messages
 * Provide programmatic access to all of the information contained in the value returned by toString.
   By failing to provide accessors, you turn the string format into a de facto API, even if you’ve specified that it’s subject to change.
+
+# Item 11 Clone
+* Mixin interface
+* Objects clone method is protected
+* deepCopy
+
+
+# Item 12 Consider Implementing Comparable
+
+* Just like equals contract equivalence relationship
+* if compareTo returns zero ,better be the objects equals if not specify with a comment
+* new BigDecimal("0.0") ,new BigDecimal("0.00") added to HashSet will maintain two objets as it invokes equals contract vs treeSet which maintains one as it invokes compareTo
+* Doesn't tell magnitude -1 or -2 its upto programmer. The contract tells only negative and postive or zero 

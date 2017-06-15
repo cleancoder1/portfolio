@@ -163,14 +163,6 @@ public class Foo {
 * A second legitimate use of finalizers concerns objects with native peers. A native peer is a native object to which a normal object delegates via native methods.
 Because a native peer is not a normal object, the garbage collector doesn’t know about it and can’t reclaim it when its Java peer is reclaimed.
 
-# Item 33
-EnumMap
+# Methods Common to All objects
 
-
-{% highlight java %}
-public class Provider {
-	public static void main (String[] args){
-	}
-}
-
-{% endhighlight %}
+# Item 8  
