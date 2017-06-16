@@ -283,3 +283,25 @@ each time it is requested
 
 * private and package-private members are part of class's implementation and do not notmally impact in exported API. These fields however can leak into the exported API if the class implements serializable
 * Instance fields should never be public, if an instance field is non final or final reference to a mutable object, then by making the filed public, you give up the ability to limit the values that can be stored in the field. This means you give up the ability to enforce invariants involving this field.ALso you give up the ability to take action when the filed is modified, so classes with public mutable fields are non thread safe.
+* A final field containing a reference to a mutable object has all the disadvantages of a nonfinal field. While the reference cannot be
+modified, the referenced object can be modified—with disastrous results.
+* Note that a nonzero-length array is always mutable,so it is wrong for a class to have a public static final array field, or an accessor that returns such a
+field
+{% highlight java %}
+// Potential security hole!
+public static final Thing[] VALUES = { ... };
+{% endhighlight  %}
+
+Two ways to fix
+{% highlight java %}
+private static final Thing[] PRIVATE_VALUES = { ... };
+public static final List<Thing> VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
+{% endhighlight %}
+
+Alternative
+{% highlight java %}
+private static final Thing[] PRIVATE_VALUES = { ... };
+public static final Thing[] values() {
+  return PRIVATE_VALUES.clone();
+}
+{% endhighlight %}
