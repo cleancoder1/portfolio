@@ -1,5 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-15T17:17:31-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
-</subtitle><entry><title type="html">Effective Java</title><link href="http://localhost:4000/java/2017/06/04/Effectivejava.html" rel="alternate" type="text/html" title="Effective Java" /><published>2017-06-04T22:06:23-05:00</published><updated>2017-06-04T22:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/04/Effectivejava</id><content type="html" xml:base="http://localhost:4000/java/2017/06/04/Effectivejava.html">&lt;p&gt;Effective java is a great book to hone your technical skills and a best investment you can make if you are a Java developer.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-16T10:21:11-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+</subtitle><entry><title type="html">Books every Java developer must read</title><link href="http://localhost:4000/java/2017/06/15/BooksToRead.html" rel="alternate" type="text/html" title="Books every Java developer must read" /><published>2017-06-15T10:06:23-05:00</published><updated>2017-06-15T10:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/15/BooksToRead</id><content type="html" xml:base="http://localhost:4000/java/2017/06/15/BooksToRead.html">&lt;p&gt;These are the top books I think every Java developer should go through. If your goal is cracking a technical interview with big companies like Amazon i would suggest
+going through Algorithms book and coursera course on it .&lt;/p&gt;
+
+&lt;h2 id=&quot;effective-java&quot;&gt;Effective Java&lt;/h2&gt;
+
+&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;amp;OneJS=1&amp;amp;Operation=GetAdHtml&amp;amp;MarketPlace=US&amp;amp;source=ac&amp;amp;ref=qf_sp_asin_til&amp;amp;ad_type=product_link&amp;amp;tracking_id=awesomeyogi-20&amp;amp;marketplace=amazon&amp;amp;region=US&amp;amp;placement=0321356683&amp;amp;asins=0321356683&amp;amp;linkId=4bdd1e1a7678cada93ef0f5b806ad320&amp;amp;show_border=false&amp;amp;link_opens_in_new_window=false&amp;amp;price_color=333333&amp;amp;title_color=0066C0&amp;amp;bg_color=FFFFFF&quot;&gt;
+  &lt;/iframe&gt;
+
+&lt;p&gt;what I like about this book ,&lt;/p&gt;
+
+&lt;p&gt;Youtube link for Effective Java&lt;/p&gt;
+
+&lt;h2 id=&quot;clean-code&quot;&gt;Clean code&lt;/h2&gt;
+
+&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;amp;OneJS=1&amp;amp;Operation=GetAdHtml&amp;amp;MarketPlace=US&amp;amp;source=ac&amp;amp;ref=qf_sp_asin_til&amp;amp;ad_type=product_link&amp;amp;tracking_id=awesomeyogi-20&amp;amp;marketplace=amazon&amp;amp;region=US&amp;amp;placement=0132350882&amp;amp;asins=0132350882&amp;amp;linkId=bbef9550a436027ef4cb3909bbd87e7d&amp;amp;show_border=false&amp;amp;link_opens_in_new_window=false&amp;amp;price_color=333333&amp;amp;title_color=0066c0&amp;amp;bg_color=ffffff&quot;&gt;
+    &lt;/iframe&gt;
+
+&lt;p&gt;The cleancoders.com website offers paid videos subscription which can be used alongside the book.&lt;/p&gt;
+
+&lt;h2 id=&quot;algorithms&quot;&gt;Algorithms&lt;/h2&gt;
+
+&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;amp;OneJS=1&amp;amp;Operation=GetAdHtml&amp;amp;MarketPlace=US&amp;amp;source=ac&amp;amp;ref=qf_sp_asin_til&amp;amp;ad_type=product_link&amp;amp;tracking_id=awesomeyogi-20&amp;amp;marketplace=amazon&amp;amp;region=US&amp;amp;placement=032157351X&amp;amp;asins=032157351X&amp;amp;linkId=3ff5a181b1d3ae0482fccfa91ef0f392&amp;amp;show_border=false&amp;amp;link_opens_in_new_window=false&amp;amp;price_color=333333&amp;amp;title_color=0066c0&amp;amp;bg_color=ffffff&quot;&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;Coursera Algorithms course&lt;/p&gt;
+
+&lt;h2 id=&quot;working-effectively-with-legacy-code&quot;&gt;Working effectively with legacy code&lt;/h2&gt;
+
+&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;amp;OneJS=1&amp;amp;Operation=GetAdHtml&amp;amp;MarketPlace=US&amp;amp;source=ac&amp;amp;ref=qf_sp_asin_til&amp;amp;ad_type=product_link&amp;amp;tracking_id=awesomeyogi-20&amp;amp;marketplace=amazon&amp;amp;region=US&amp;amp;placement=0131177052&amp;amp;asins=0131177052&amp;amp;linkId=b08a8950c4429b1ad3c5638a7830c99e&amp;amp;show_border=false&amp;amp;link_opens_in_new_window=false&amp;amp;price_color=333333&amp;amp;title_color=0066c0&amp;amp;bg_color=ffffff&quot;&gt;
+    &lt;/iframe&gt;</content><summary type="html">These are the top books I think every Java developer should go through. If your goal is cracking a technical interview with big companies like Amazon i would suggest
+going through Algorithms book and coursera course on it .</summary></entry><entry><title type="html">Effective Java</title><link href="http://localhost:4000/java/2017/06/04/Effectivejava.html" rel="alternate" type="text/html" title="Effective Java" /><published>2017-06-04T22:06:23-05:00</published><updated>2017-06-04T22:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/04/Effectivejava</id><content type="html" xml:base="http://localhost:4000/java/2017/06/04/Effectivejava.html">&lt;p&gt;Effective java is a great book to hone your technical skills and a best investment you can make if you are a Java developer.&lt;/p&gt;
 
 &lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;amp;OneJS=1&amp;amp;Operation=GetAdHtml&amp;amp;MarketPlace=US&amp;amp;source=ac&amp;amp;ref=qf_sp_asin_til&amp;amp;ad_type=product_link&amp;amp;tracking_id=awesomeyogi-20&amp;amp;marketplace=amazon&amp;amp;region=US&amp;amp;placement=0321356683&amp;amp;asins=0321356683&amp;amp;linkId=4bdd1e1a7678cada93ef0f5b806ad320&amp;amp;show_border=false&amp;amp;link_opens_in_new_window=false&amp;amp;price_color=333333&amp;amp;title_color=0066C0&amp;amp;bg_color=FFFFFF&quot;&gt;
     &lt;/iframe&gt;
