@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-16T15:42:25-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-16T16:00:45-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
 </subtitle><entry><title type="html">Books every Java developer must read</title><link href="http://localhost:4000/java/2017/06/15/BooksToRead.html" rel="alternate" type="text/html" title="Books every Java developer must read" /><published>2017-06-15T10:06:23-05:00</published><updated>2017-06-15T10:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/15/BooksToRead</id><content type="html" xml:base="http://localhost:4000/java/2017/06/15/BooksToRead.html">&lt;p&gt;These are the top books I think every Java developer should go through. If your goal is cracking a technical interview with big companies like Amazon i would suggest
 going through Algorithms book and coursera course on it .&lt;/p&gt;
 
@@ -318,6 +318,25 @@ By failing to provide accessors, you turn the string format into a de facto API,
   &lt;li&gt;if compareTo returns zero ,better be the objects equals if not specify with a comment&lt;/li&gt;
   &lt;li&gt;new BigDecimal(“0.0”) ,new BigDecimal(“0.00”) added to HashSet will maintain two objets as it invokes equals contract vs treeSet which maintains one as it invokes compareTo&lt;/li&gt;
   &lt;li&gt;Doesn’t tell magnitude -1 or -2 its upto programmer. The contract tells only negative and postive or zero&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;classes-and-interfaces&quot;&gt;Classes and interfaces&lt;/h2&gt;
+
+&lt;h1 id=&quot;item-13-minimize-the-accessibility-of-classes-and-members&quot;&gt;Item 13 Minimize the accessibility of classes and members&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A well desinged module hides all of its implentation details, cleanly seperating its API from its implementation.&lt;/li&gt;
+  &lt;li&gt;Rule of thumn is simple : make each class or member as inaccessible as possible.&lt;/li&gt;
+  &lt;li&gt;For top-level (non-nested) classes and interfaces there are only two possible access levels : package-private and public
+    &lt;ul&gt;
+      &lt;li&gt;If a package-private top-level class is used by only one class,consider making the top-level class a private nested class of the sole class that uses it.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;For memebers (fields,methods,nested classes and nested interfaces) there are four possible assess levels private, package-private, protected( subclass + package)    ,public&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;private and package-private members are part of class’s implementation and do not notmally impact in exported API. These fields however can leak into the exported API if the class implements serializable&lt;/li&gt;
+  &lt;li&gt;Instance fields should never be public, if an instance field is non final or final reference to a mutable object, then by making the filed public, you give up the ability to limit the values that can be stored in the field. This means you give up the ability to enforce invariants involving this field.ALso you give up the ability to take action when the filed is modified, so classes with public mutable fields are non thread safe.&lt;/li&gt;
 &lt;/ul&gt;</content><summary type="html">Effective java is a great book to hone your technical skills and a best investment you can make if you are a Java developer.
 
 

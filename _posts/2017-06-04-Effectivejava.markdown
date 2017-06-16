@@ -269,3 +269,17 @@ each time it is requested
 * if compareTo returns zero ,better be the objects equals if not specify with a comment
 * new BigDecimal("0.0") ,new BigDecimal("0.00") added to HashSet will maintain two objets as it invokes equals contract vs treeSet which maintains one as it invokes compareTo
 * Doesn't tell magnitude -1 or -2 its upto programmer. The contract tells only negative and postive or zero
+
+
+## Classes and interfaces
+
+# Item 13 Minimize the accessibility of classes and members
+
+* A well desinged module hides all of its implentation details, cleanly seperating its API from its implementation.
+* Rule of thumn is simple : make each class or member as inaccessible as possible.
+* For top-level (non-nested) classes and interfaces there are only two possible access levels : package-private and public
+  * If a package-private top-level class is used by only one class,consider making the top-level class a private nested class of the sole class that uses it.
+* For memebers (fields,methods,nested classes and nested interfaces) there are four possible assess levels private, package-private, protected( subclass + package)    ,public
+
+* private and package-private members are part of class's implementation and do not notmally impact in exported API. These fields however can leak into the exported API if the class implements serializable
+* Instance fields should never be public, if an instance field is non final or final reference to a mutable object, then by making the filed public, you give up the ability to limit the values that can be stored in the field. This means you give up the ability to enforce invariants involving this field.ALso you give up the ability to take action when the filed is modified, so classes with public mutable fields are non thread safe.

@@ -349,6 +349,25 @@ By failing to provide accessors, you turn the string format into a de facto API,
   <li>Doesn’t tell magnitude -1 or -2 its upto programmer. The contract tells only negative and postive or zero</li>
 </ul>
 
+<h2 id="classes-and-interfaces">Classes and interfaces</h2>
+
+<h1 id="item-13-minimize-the-accessibility-of-classes-and-members">Item 13 Minimize the accessibility of classes and members</h1>
+
+<ul>
+  <li>A well desinged module hides all of its implentation details, cleanly seperating its API from its implementation.</li>
+  <li>Rule of thumn is simple : make each class or member as inaccessible as possible.</li>
+  <li>For top-level (non-nested) classes and interfaces there are only two possible access levels : package-private and public
+    <ul>
+      <li>If a package-private top-level class is used by only one class,consider making the top-level class a private nested class of the sole class that uses it.</li>
+    </ul>
+  </li>
+  <li>
+    <p>For memebers (fields,methods,nested classes and nested interfaces) there are four possible assess levels private, package-private, protected( subclass + package)    ,public</p>
+  </li>
+  <li>private and package-private members are part of class’s implementation and do not notmally impact in exported API. These fields however can leak into the exported API if the class implements serializable</li>
+  <li>Instance fields should never be public, if an instance field is non final or final reference to a mutable object, then by making the filed public, you give up the ability to limit the values that can be stored in the field. This means you give up the ability to enforce invariants involving this field.ALso you give up the ability to take action when the filed is modified, so classes with public mutable fields are non thread safe.</li>
+</ul>
+
   </div>
 
   
