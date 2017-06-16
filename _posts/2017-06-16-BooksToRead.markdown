@@ -38,8 +38,8 @@ The [Cleancoders](cleancoders.com) offers paid videos subscription which can be 
 {% endraw %}  
 
 
-[Coursera on algorithm by Robert Sedgewick](https://www.coursera.org/learn/algorithms-part1) is a good supplement
-[24-part Lecture Series](http://www.informit.com/store/algorithms-video-lectures-24-part-lecture-series-9780134384436)
+* [Coursera on algorithm by Robert Sedgewick](https://www.coursera.org/learn/algorithms-part1) is a good supplement
+* [24-part Lecture Series](http://www.informit.com/store/algorithms-video-lectures-24-part-lecture-series-9780134384436)
 
 ## Working effectively with legacy code
 

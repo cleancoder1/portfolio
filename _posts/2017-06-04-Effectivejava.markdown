@@ -276,7 +276,7 @@ each time it is requested
 # Item 13 Minimize the accessibility of classes and members
 
 * A well desinged module hides all of its implentation details, cleanly seperating its API from its implementation.
-* Rule of thumn is simple : make each class or member as inaccessible as possible.
+* Rule of thumb is simple : make each class or member as inaccessible as possible.
 * For top-level (non-nested) classes and interfaces there are only two possible access levels : package-private and public
   * If a package-private top-level class is used by only one class,consider making the top-level class a private nested class of the sole class that uses it.
 * For memebers (fields,methods,nested classes and nested interfaces) there are four possible assess levels private, package-private, protected( subclass + package)    ,public

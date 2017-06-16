@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-16T16:00:45-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-06-16T16:03:31-05:00</updated><id>http://localhost:4000//</id><title type="html">Programming Passion</title><subtitle>A website to blog about programming ,fitness and yoga
 </subtitle><entry><title type="html">Books every Java developer must read</title><link href="http://localhost:4000/java/2017/06/15/BooksToRead.html" rel="alternate" type="text/html" title="Books every Java developer must read" /><published>2017-06-15T10:06:23-05:00</published><updated>2017-06-15T10:06:23-05:00</updated><id>http://localhost:4000/java/2017/06/15/BooksToRead</id><content type="html" xml:base="http://localhost:4000/java/2017/06/15/BooksToRead.html">&lt;p&gt;These are the top books I think every Java developer should go through. If your goal is cracking a technical interview with big companies like Amazon i would suggest
 going through Algorithms book and coursera course on it .&lt;/p&gt;
 
@@ -23,8 +23,10 @@ going through Algorithms book and coursera course on it .&lt;/p&gt;
 &lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;amp;OneJS=1&amp;amp;Operation=GetAdHtml&amp;amp;MarketPlace=US&amp;amp;source=ac&amp;amp;ref=qf_sp_asin_til&amp;amp;ad_type=product_link&amp;amp;tracking_id=awesomeyogi-20&amp;amp;marketplace=amazon&amp;amp;region=US&amp;amp;placement=032157351X&amp;amp;asins=032157351X&amp;amp;linkId=3ff5a181b1d3ae0482fccfa91ef0f392&amp;amp;show_border=false&amp;amp;link_opens_in_new_window=false&amp;amp;price_color=333333&amp;amp;title_color=0066c0&amp;amp;bg_color=ffffff&quot;&gt;
 &lt;/iframe&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.coursera.org/learn/algorithms-part1&quot;&gt;Coursera on algorithm by Robert Sedgewick&lt;/a&gt; is a good supplement
-&lt;a href=&quot;http://www.informit.com/store/algorithms-video-lectures-24-part-lecture-series-9780134384436&quot;&gt;24-part Lecture Series&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/algorithms-part1&quot;&gt;Coursera on algorithm by Robert Sedgewick&lt;/a&gt; is a good supplement&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.informit.com/store/algorithms-video-lectures-24-part-lecture-series-9780134384436&quot;&gt;24-part Lecture Series&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;working-effectively-with-legacy-code&quot;&gt;Working effectively with legacy code&lt;/h2&gt;
 
@@ -326,7 +328,7 @@ By failing to provide accessors, you turn the string format into a de facto API,
 
 &lt;ul&gt;
   &lt;li&gt;A well desinged module hides all of its implentation details, cleanly seperating its API from its implementation.&lt;/li&gt;
-  &lt;li&gt;Rule of thumn is simple : make each class or member as inaccessible as possible.&lt;/li&gt;
+  &lt;li&gt;Rule of thumb is simple : make each class or member as inaccessible as possible.&lt;/li&gt;
   &lt;li&gt;For top-level (non-nested) classes and interfaces there are only two possible access levels : package-private and public
     &lt;ul&gt;
       &lt;li&gt;If a package-private top-level class is used by only one class,consider making the top-level class a private nested class of the sole class that uses it.&lt;/li&gt;
