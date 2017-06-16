@@ -27,7 +27,7 @@ Youtube link for Effective Java
     </iframe>
 {% endraw %}  
 
-The cleancoders.com website offers paid videos subscription which can be used alongside the book.
+The [Cleancoders](cleancoders.com) offers paid videos subscription which can be used alongside the book.
 
 
 ## Algorithms
@@ -38,11 +38,17 @@ The cleancoders.com website offers paid videos subscription which can be used al
 {% endraw %}  
 
 
-Coursera Algorithms course
+[Coursera on algorithm by Robert Sedgewick](https://www.coursera.org/learn/algorithms-part1) is a good supplement
 
 ## Working effectively with legacy code
 
-{% raw%}
+{% raw %}
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=awesomeyogi-20&marketplace=amazon&region=US&placement=0131177052&asins=0131177052&linkId=b08a8950c4429b1ad3c5638a7830c99e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
     </iframe>
 {% endraw %}
+
+
+## Online courses to do
+
+* [Databases course from stanford by Jennifer Widom](https://lagunita.stanford.edu/courses/Engineering/db/2014_1/courseware/ch-relational_databases/)
+* [Coursera on algorithm by Robert Sedgewick](https://www.coursera.org/learn/algorithms-part1)
