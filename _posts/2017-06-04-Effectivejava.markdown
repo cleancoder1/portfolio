@@ -305,3 +305,28 @@ public static final Thing[] values() {
   return PRIVATE_VALUES.clone();
 }
 {% endhighlight %}
+
+# Item 14 In public classes , use accessor methods,not public fields
+
+* If a class is package-private or is a private nested class, there is nothing inherently wrong with exposing its data fields.
+* Point and Dimension of java api classes are exceptions where there expose public fields and it was a bad idea.
+* While its never a good idea for a public class to expose field directly, it is less harmful if the fields are immutable. You can't change the repersentation of such
+  class without changing its API , and you can't take auxilary actions when a field is read , but you can enforce invariants.
+  {% highlight java %}
+
+  // Public class with exposed immutable fields - questionable
+public final class Time {
+  private static final int HOURS_PER_DAY = 24;
+  private static final int MINUTES_PER_HOUR = 60;
+  public final int hour;
+  public final int minute;
+  public Time(int hour, int minute) {
+    if (hour < 0 || hour >= HOURS_PER_DAY)
+      throw new IllegalArgumentException("Hour: " + hour);
+    if (minute < 0 || minute >= MINUTES_PER_HOUR)
+      throw new IllegalArgumentException("Min: " + minute);
+    this.hour = hour;
+    this.minute = minute;
+  }
+}
+{% endhighlight %}
