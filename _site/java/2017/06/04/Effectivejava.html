@@ -387,6 +387,46 @@ field</li>
   <span class="k">return</span> <span class="n">PRIVATE_VALUES</span><span class="o">.</span><span class="na">clone</span><span class="o">();</span>
 <span class="o">}</span></code></pre></figure>
 
+<h1 id="item-14-in-public-classes--use-accessor-methodsnot-public-fields">Item 14 In public classes , use accessor methods,not public fields</h1>
+
+<ul>
+  <li>If a class is package-private or is a private nested class, there is nothing inherently wrong with exposing its data fields.</li>
+  <li>Point and Dimension of java api classes are exceptions where there expose public fields and it was a bad idea.</li>
+  <li>While its never a good idea for a public class to expose field directly, it is less harmful if the fields are immutable. You can’t change the repersentation of such
+class without changing its API , and you can’t take auxilary actions when a field is read , but you can enforce invariants.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">// Public class with exposed immutable fields - questionable</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Time</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">HOURS_PER_DAY</span> <span class="o">=</span> <span class="mi">24</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MINUTES_PER_HOUR</span> <span class="o">=</span> <span class="mi">60</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">hour</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nf">Time</span><span class="o">(</span><span class="kt">int</span> <span class="n">hour</span><span class="o">,</span> <span class="kt">int</span> <span class="n">minute</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">hour</span> <span class="o">&gt;=</span> <span class="n">HOURS_PER_DAY</span><span class="o">)</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span><span class="s">"Hour: "</span> <span class="o">+</span> <span class="n">hour</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">minute</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">minute</span> <span class="o">&gt;=</span> <span class="n">MINUTES_PER_HOUR</span><span class="o">)</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span><span class="s">"Min: "</span> <span class="o">+</span> <span class="n">minute</span><span class="o">);</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="n">minute</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h1 id="item-15-minimize-immutability">Item 15 Minimize immutability</h1>
+<ul>
+  <li>An immputable class is simply a class whose instance cannot be modified. All of the information contained in each instance is provided when it is created an is fixed
+for the lifetime of the object.</li>
+  <li>Recipe for immutability
+    <ul>
+      <li>Don’t provide any mehtods that modify the Object’s state ( known as mutators)</li>
+      <li>Ensure that class can’t be extended  : Subclasses can compromise the immutable behavior of the class by behaving as if the objects state has changed. //TODO need to research more on how</li>
+      <li>Make all fields final</li>
+      <li>Make all fields private, technically possible to have public final fields containing primitive value or immutable classes but a bad idea</li>
+      <li>Ensure exclusive access to any mutable components , if your class has any fields that refer to mutable objects ensure that clients of the class cannot obtain references to these objects.  Never initialize such a field to a client-provided object reference or return the object refrenece from the accessors. Make defensive
+copies in constructors, accessors and readObject methods.</li>
+    </ul>
+  </li>
+</ul>
 
   </div>
 

@@ -330,3 +330,15 @@ public final class Time {
   }
 }
 {% endhighlight %}
+
+
+# Item 15 Minimize immutability
+* An immputable class is simply a class whose instance cannot be modified. All of the information contained in each instance is provided when it is created an is fixed
+for the lifetime of the object. 
+* Recipe for immutability
+  * Don't provide any mehtods that modify the Object's state ( known as mutators)
+  * Ensure that class can't be extended  : Subclasses can compromise the immutable behavior of the class by behaving as if the objects state has changed. //TODO need to research more on how
+  * Make all fields final
+  * Make all fields private, technically possible to have public final fields containing primitive value or immutable classes but a bad idea
+  * Ensure exclusive access to any mutable components , if your class has any fields that refer to mutable objects ensure that clients of the class cannot obtain references to these objects.  Never initialize such a field to a client-provided object reference or return the object refrenece from the accessors. Make defensive
+  copies in constructors, accessors and readObject methods.
