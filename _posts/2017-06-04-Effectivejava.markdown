@@ -12,6 +12,13 @@ Effective java is a great book to hone your technical skills and a best investme
     </iframe>
   {% endraw %}  
 This is just my notes , will be adding more notes as i go through the book.
+
+
+* The language supports four kinds of types: interfaces (including annotations), classes (including enums), arrays, and primitives. The first three are known
+as reference types. Class instances and arrays are objects; primitive values are not.
+* A class’s members consist of its fields, methods, member classes, and member interfaces. A method’s signature consists of its name and the types of its formal
+parameters; the signature does not include the method’s return type
+
 ## Creating and Destroying Objects
 
 # Item 1: Consider static factories instead of constructors
