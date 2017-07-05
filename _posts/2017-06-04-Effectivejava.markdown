@@ -334,11 +334,73 @@ public final class Time {
 
 # Item 15 Minimize immutability
 * An immputable class is simply a class whose instance cannot be modified. All of the information contained in each instance is provided when it is created an is fixed
-for the lifetime of the object. 
+for the lifetime of the object.
 * Recipe for immutability
   * Don't provide any mehtods that modify the Object's state ( known as mutators)
   * Ensure that class can't be extended  : Subclasses can compromise the immutable behavior of the class by behaving as if the objects state has changed. //TODO need to research more on how
   * Make all fields final
   * Make all fields private, technically possible to have public final fields containing primitive value or immutable classes but a bad idea
   * Ensure exclusive access to any mutable components , if your class has any fields that refer to mutable objects ensure that clients of the class cannot obtain references to these objects.  Never initialize such a field to a client-provided object reference or return the object refrenece from the accessors. Make defensive
-  copies in constructors, accessors and readObject methods.
+  copies in constructors, accessors and readObject methods
+
+
+# Item 19 Use interfaces only to define types
+* The constant inerface pattern is a poor use of interfaces. That class uses some constants internally is an implementation detail. Implementing a constant
+interface causes the implementation detail to leak into the class's exported API.
+* Interfaces should be used only to define types. They should not be used to export constants.
+
+
+{% highlight java %}
+// Constant interface antipattern - do not use!
+public interface PhysicalConstants {
+  / / Avogadro's number (1/mol)
+  static final double AVOGADROS_NUMBER = 6.02214199e23;
+    // Boltzmann constant (J/K)
+    static final double BOLTZMANN_CONSTANT = 1.3806503e-23;
+    // Mass of the electron (kg)
+    static final double ELECTRON_MASS = 9.10938188e-31;
+}
+
+
+// Constant utility class
+package com.effectivejava.science;
+  public class PhysicalConstants {
+    private PhysicalConstants() { } // Prevents instantiation
+    public static final double AVOGADROS_NUMBER = 6.02214199e23;
+    public static final double BOLTZMANN_CONSTANT = 1.3806503e-23;
+    public static final double ELECTRON_MASS = 9.10938188e-31;
+}
+{% endhighlight %}
+
+
+# Item 22 Favor static member class over non static
+
+* A nested class is a class within another class.
+* 4 kind of nested classes. static member class, non static member class, anonymous class and local class
+*  inner class => non static member class , anonymous class, local class
+* A static member class is the simplest kind of nested class. It is best thought of as an ordinary class that happens to be declared inside another class and has
+access to all of the enclosing class’s members, even those declared private.
+* The association between a nonstatic member class instance and its enclosing instance is established when the former is created; it cannot be modified
+thereafter. Normally, the association is established automatically by invoking a nonstatic member class constructor from within an instance method of the
+enclosing class.
+* If an instance of a nested class can exist in isolation from an instance of its enclosingclass, then the nested class must be a static member class
+* it is impossible to create an instance of a nonstatic member class without an enclosing instance.
+* A common use of private static member classes is to represent components of the object represented by their enclosing class. For example, consider a Map
+instance, which associates keys with values. Many Map implementations have an internal Entry object for each key-value pair in the map. While each entry is associated
+with a map, the methods on an entry (getKey, getValue, and setValue) do not need access to the map. Therefore, it would be wasteful to use a nonstatic
+member class to represent entries: a private static member class is best. If you accidentally omit the static modifier in the entry declaration, the map will still
+work, but each entry will contain a superfluous reference to the map, which wastes space and time.
+
+{% highlight java %}
+// Typical use of a nonstatic member class
+public class MySet<E> extends AbstractSet<E> {
+  ... // Bulk of the class omitted
+  public Iterator<E> iterator() {
+    return new MyIterator();
+  }
+  private class MyIterator implements Iterator<E> {
+    ...
+  }
+}
+
+{% endhighlight %}
