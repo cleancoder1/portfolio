@@ -379,6 +379,30 @@ package com.effectivejava.science;
 }
 {% endhighlight %}
 
+# Item 21 Use function objects to represent strategies
+
+* Some languages support function pointers, delegates, lambda expressions, or similar facilities that allow programs to store and transmit the ability to invoke a particular function.
+* Such facilities are typically used to allow the caller of a function to specialize its behavior by passing in a second function
+
+* A primary use of function pointers is to implement the Strategy pattern.
+To implement this pattern in Java, declare an interface to represent the strategy, and a class that implements this interface for each concrete strategy.
+* When a concrete strategy is used only once, it is typically declared and instantiated as an anonymous class.
+* When a concrete strategy is designed for repeated use, it is generally implemented as a private static member class and exported in a public static final field whose type is the strategy interface.
+
+{% highlight java %}
+
+// Exporting a concrete strategy
+class Host {
+  private static class StrLenCmp implements Comparator<String>, Serializable {
+    public int compare(String s1, String s2) {
+        return s1.length() - s2.length();
+      }
+    }
+// Returned comparator is serializable
+public static final Comparator<String> STRING_LENGTH_COMPARATOR = new StrLenCmp();
+... // Bulk of class omitted
+}
+{% endhighlight %}
 
 # Item 22 Favor static member class over non static
 
