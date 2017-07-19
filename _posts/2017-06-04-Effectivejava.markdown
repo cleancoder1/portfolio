@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Effective Java"
+title:  "Ielets"
 date:   2017-06-04 21:06:23 -0600
 categories: Java
 ---
@@ -351,6 +351,12 @@ for the lifetime of the object.
   copies in constructors, accessors and readObject methods
 
 
+# Item 16 Favor composition over inheritance
+
+* A subclass depends on the implementation details of its superclassfor its proper function. The superclass’s implementation may change from release
+to release, and if it does, the subclass may break, even though its code has not been touched.
+
+
 # Item 19 Use interfaces only to define types
 * The constant inerface pattern is a poor use of interfaces. That class uses some constants internally is an implementation detail. Implementing a constant
 interface causes the implementation detail to leak into the class's exported API.
@@ -435,3 +441,38 @@ public class MySet<E> extends AbstractSet<E> {
 }
 
 {% endhighlight %}
+
+# Item 23 Don't use raw types in new code
+
+* A class or interface whose declaration has one or more type parameters is a generic class or interface. The List interface has a single type parameter, E, representing the element type of the list.
+* If you use raw types, you lose all the safety and expressiveness benefits of generics
+* you lose type safety if you use a raw type like List, but not if you use a parameterized type like List<Object>
+
+
+# Item 31  Use instance fields instead of Ordinals
+{% highlight java %}
+// Abuse of ordinal to derive an associated value - DON'T DO THIS
+public enum Ensemble {
+  SOLO, DUET, TRIO, QUARTET, QUINTET,SEXTET, SEPTET, OCTET, NONET, DECTET;
+  public int numberOfMusicians() {
+     return ordinal() + 1; }
+}
+{% endhighlight %}
+
+* Never derive a value associated with an enum from its Ordianal; store it in an instance field instead.
+{% highlight java %}
+
+public enum Ensemble {
+  SOLO(1), DUET(2), TRIO(3), QUARTET(4), QUINTET(5),SEXTET(6), SEPTET(7), OCTET(8), DOUBLE_QUARTET(8),NONET(9), DECTET(10), TRIPLE_QUARTET(12);
+  private final int numberOfMusicians;
+  Ensemble(int size) {
+    this.numberOfMusicians = size;
+   }
+  public int numberOfMusicians() {
+     return numberOfMusicians;
+    }
+}
+{% endhighlight %}
+
+* Most Programmers will have no use for Ordinal method. It is desinged for use by general -purpose enum based data structures such as EnumSet and EnumMap
+unless you are writing such a data structure , you are best off avoiding the ordinal method entirely.
