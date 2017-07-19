@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ielets"
+title:  "Effective Java"
 date:   2017-06-04 21:06:23 -0600
 categories: Java
 ---
