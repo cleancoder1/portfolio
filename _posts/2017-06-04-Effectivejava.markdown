@@ -476,3 +476,38 @@ public enum Ensemble {
 
 * Most Programmers will have no use for Ordinal method. It is desinged for use by general -purpose enum based data structures such as EnumSet and EnumMap
 unless you are writing such a data structure , you are best off avoiding the ordinal method entirely.
+
+
+# Item 32 Use EnumSet instead of bit fields
+
+* If the elements of an enumerated type are used primarily in sets, it is traditional to use the int enum pattern (Item 30), assigning a different power of 2 to each constant:
+
+{% highlight java %}
+
+// Bit field enumeration constants - OBSOLETE!
+public class Text {
+  public static final int STYLE_BOLD = 1 << 0; // 1
+  public static final int STYLE_ITALIC = 1 << 1; // 2
+  public static final int STYLE_UNDERLINE = 1 << 2; // 4
+  public static final int STYLE_STRIKETHROUGH = 1 << 3; // 8
+// Parameter is bitwise OR of zero or more STYLE_ constants
+    public void applyStyles(int styles) { ... }
+}
+{% endhighlight %}
+
+text.applyStyles(STYLE_BOLD | STYLE_ITALIC);
+
+{% highlight java %}
+
+// EnumSet - a modern replacement for bit fields
+public class Text {
+  public enum Style { BOLD, ITALIC, UNDERLINE, STRIKETHROUGH }
+  // Any Set could be passed in, but EnumSet is clearly best
+  public void applyStyles(Set<Style> styles) { ... }
+  }
+
+{% endhighlight %}
+text.applyStyles(EnumSet.of(Style.BOLD, Style.ITALIC));
+
+* Just because an enumerated type will be used in sets, there is no reason to represent it with bit fields.
+* The one disadvantage of enum set as of release 1.6 that it is not possible to create an immutable enum set. Wrap enumset with collections.unmodifiableSet 
