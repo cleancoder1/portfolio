@@ -490,7 +490,7 @@ public class Text {
   public static final int STYLE_ITALIC = 1 << 1; // 2
   public static final int STYLE_UNDERLINE = 1 << 2; // 4
   public static final int STYLE_STRIKETHROUGH = 1 << 3; // 8
-// Parameter is bitwise OR of zero or more STYLE_ constants
+  // Parameter is bitwise OR of zero or more STYLE_ constants
     public void applyStyles(int styles) { ... }
 }
 {% endhighlight %}
@@ -510,4 +510,113 @@ public class Text {
 text.applyStyles(EnumSet.of(Style.BOLD, Style.ITALIC));
 
 * Just because an enumerated type will be used in sets, there is no reason to represent it with bit fields.
-* The one disadvantage of enum set as of release 1.6 that it is not possible to create an immutable enum set. Wrap enumset with collections.unmodifiableSet 
+* The one disadvantage of enum set as of release 1.6 that it is not possible to create an immutable enum set. Wrap enumset with collections.unmodifiableSet
+
+# Item 33  Use Enum map instead of ordinal indexing
+{% highlight java %}
+
+public class Herb {
+  public enum Type { ANNUAL, PERENNIAL, BIENNIAL }
+  private final String name;
+  private final Type type;
+  Herb(String name, Type type) {
+    this.name = name;
+    this.type = type;
+  }
+  @Override public String toString() {
+    return name;
+  }
+}
+{% endhighlight %}
+
+* Now suppose you have an array of herbs representing the plants in a garden,and you want to list these plants organized by type (annual, perennial, or biennial).
+To do this, you construct three sets, one for each type, and iterate through the garden, placing each herb in the appropriate set.
+
+{% highlight java %}
+// Using ordinal() to index an array - DON'T DO THIS!
+Herb[] garden = ... ;
+Set<Herb>[] herbsByType = // Indexed by Herb.Type.ordinal()
+(Set<Herb>[]) new Set[Herb.Type.values().length];
+for (int i = 0; i < herbsByType.length; i++)
+  herbsByType[i] = new HashSet<Herb>();
+for (Herb h : garden)
+  herbsByType[h.type.ordinal()].add(h);
+// Print the results
+for (int i = 0; i < herbsByType.length; i++) {
+  System.out.printf("%s: %s%n",Herb.Type.values()[i], herbsByType[i]);
+{% endhighlight %}
+
+
+{% highlight java %}
+
+// Using an EnumMap to associate data with an enum
+Map<Herb.Type, Set<Herb>> herbsByType =new EnumMap<Herb.Type, Set<Herb>>(Herb.Type.class);
+for (Herb.Type t : Herb.Type.values())
+  herbsByType.put(t, new HashSet<Herb>());
+for (Herb h : garden)
+  herbsByType.get(h.type).add(h);
+System.out.println(herbsByType);
+{% endhighlight %}
+
+{% highlight java %}
+
+// Using ordinal() to index array of arrays - DON'T DO THIS!
+public enum Phase {
+  SOLID, LIQUID, GAS;
+  public enum Transition {
+    MELT, FREEZE, BOIL, CONDENSE, SUBLIME, DEPOSIT;
+
+    // Rows indexed by src-ordinal, cols by dst-ordinal
+    private static final Transition[][] TRANSITIONS = {
+      { null, MELT, SUBLIME },
+      { FREEZE, null, BOIL },
+      { DEPOSIT, CONDENSE, null }
+    };
+    // Returns the phase transition from one phase to another
+    public static Transition from(Phase src, Phase dst) {
+      return TRANSITIONS[src.ordinal()][dst.ordinal()];
+    }
+  }
+}
+{% endhighlight %}
+
+
+{% highlight java %}
+
+// Using a nested EnumMap to associate data with enum pairs
+public enum Phase {
+  SOLID, LIQUID, GAS;
+  public enum Transition {
+    MELT(SOLID, LIQUID), FREEZE(LIQUID, SOLID),
+    BOIL(LIQUID, GAS), CONDENSE(GAS, LIQUID),
+    SUBLIME(SOLID, GAS), DEPOSIT(GAS, SOLID);
+    final Phase src;
+    final Phase dst;
+    Transition(Phase src, Phase dst) {
+      this.src = src;
+      this.dst = dst;
+    }
+
+// Initialize the phase transition map
+  private static final Map<Phase, Map<Phase,Transition>> m =new EnumMap<Phase, Map<Phase,Transition>>(Phase.class);
+    static {
+      for (Phase p : Phase.values())
+        m.put(p,new EnumMap<Phase,Transition>(Phase.class));
+      for (Transition trans : Transition.values())
+        m.get(trans.src).put(trans.dst, trans);
+    }
+    public static Transition from(Phase src, Phase dst) {
+      return m.get(src).get(dst);
+    }
+  }
+}
+
+{% endhighlight %}
+
+* Now suppose you want to add a new phase to the system: the plasma. There are only two transitions associated with this phase: ionization,
+which takes a gas to a plasma; and deionization, which takes a plasma to a gas. To update the array-based program, you would have to add one new constant to
+Phase and two to Phase.Transition, and replace the original nine-element array of arrays with a new sixteen-element version. If you add too many or too few elements
+to the array, or place an element out of order, you are out of luck: the program will compile, but it will fail at runtime. To update the EnumMap-based
+version, all you have to do is add PLASMA to the list of phases, and IONIZE(GAS,PLASMA) and DEIONIZE(PLASMA, GAS) to the list of phase transitions.
+
+* In summary, it is rarely appropriate to use ordinals to index arrays: use EnumMap instead.
