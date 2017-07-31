@@ -72,6 +72,14 @@
     </iframe>
 
 <p>This is just my notes , will be adding more notes as i go through the book.</p>
+
+<ul>
+  <li>The language supports four kinds of types: interfaces (including annotations), classes (including enums), arrays, and primitives. The first three are known
+as reference types. Class instances and arrays are objects; primitive values are not.</li>
+  <li>A class’s members consist of its fields, methods, member classes, and member interfaces. A method’s signature consists of its name and the types of its formal
+parameters; the signature does not include the method’s return type</li>
+</ul>
+
 <h2 id="creating-and-destroying-objects">Creating and Destroying Objects</h2>
 
 <h1 id="item-1-consider-static-factories-instead-of-constructors">Item 1: Consider static factories instead of constructors</h1>
@@ -423,10 +431,433 @@ for the lifetime of the object.</li>
       <li>Make all fields final</li>
       <li>Make all fields private, technically possible to have public final fields containing primitive value or immutable classes but a bad idea</li>
       <li>Ensure exclusive access to any mutable components , if your class has any fields that refer to mutable objects ensure that clients of the class cannot obtain references to these objects.  Never initialize such a field to a client-provided object reference or return the object refrenece from the accessors. Make defensive
-copies in constructors, accessors and readObject methods.</li>
+copies in constructors, accessors and readObject methods</li>
     </ul>
   </li>
 </ul>
+
+<h1 id="item-16-favor-composition-over-inheritance">Item 16 Favor composition over inheritance</h1>
+
+<ul>
+  <li>A subclass depends on the implementation details of its superclassfor its proper function. The superclass’s implementation may change from release
+to release, and if it does, the subclass may break, even though its code has not been touched.</li>
+</ul>
+
+<h1 id="item-19-use-interfaces-only-to-define-types">Item 19 Use interfaces only to define types</h1>
+<ul>
+  <li>The constant inerface pattern is a poor use of interfaces. That class uses some constants internally is an implementation detail. Implementing a constant
+interface causes the implementation detail to leak into the class’s exported API.</li>
+  <li>Interfaces should be used only to define types. They should not be used to export constants.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Constant interface antipattern - do not use!</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PhysicalConstants</span> <span class="o">{</span>
+  <span class="o">/</span> <span class="o">/</span> <span class="n">Avogadro</span><span class="err">'</span><span class="n">s</span> <span class="nf">number</span> <span class="o">(</span><span class="mi">1</span><span class="o">/</span><span class="n">mol</span><span class="o">)</span>
+  <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">AVOGADROS_NUMBER</span> <span class="o">=</span> <span class="mf">6.02214199e23</span><span class="o">;</span>
+    <span class="c1">// Boltzmann constant (J/K)</span>
+    <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">BOLTZMANN_CONSTANT</span> <span class="o">=</span> <span class="mf">1.3806503</span><span class="n">e</span><span class="o">-</span><span class="mi">23</span><span class="o">;</span>
+    <span class="c1">// Mass of the electron (kg)</span>
+    <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">ELECTRON_MASS</span> <span class="o">=</span> <span class="mf">9.10938188</span><span class="n">e</span><span class="o">-</span><span class="mi">31</span><span class="o">;</span>
+<span class="o">}</span>
+
+
+<span class="c1">// Constant utility class</span>
+<span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">effectivejava</span><span class="o">.</span><span class="na">science</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PhysicalConstants</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nf">PhysicalConstants</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span> <span class="c1">// Prevents instantiation</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">AVOGADROS_NUMBER</span> <span class="o">=</span> <span class="mf">6.02214199e23</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">BOLTZMANN_CONSTANT</span> <span class="o">=</span> <span class="mf">1.3806503</span><span class="n">e</span><span class="o">-</span><span class="mi">23</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="n">ELECTRON_MASS</span> <span class="o">=</span> <span class="mf">9.10938188</span><span class="n">e</span><span class="o">-</span><span class="mi">31</span><span class="o">;</span>
+<span class="o">}</span></code></pre></figure>
+
+<h1 id="item-21-use-function-objects-to-represent-strategies">Item 21 Use function objects to represent strategies</h1>
+
+<ul>
+  <li>Some languages support function pointers, delegates, lambda expressions, or similar facilities that allow programs to store and transmit the ability to invoke a particular function.</li>
+  <li>
+    <p>Such facilities are typically used to allow the caller of a function to specialize its behavior by passing in a second function</p>
+  </li>
+  <li>A primary use of function pointers is to implement the Strategy pattern.
+To implement this pattern in Java, declare an interface to represent the strategy, and a class that implements this interface for each concrete strategy.</li>
+  <li>When a concrete strategy is used only once, it is typically declared and instantiated as an anonymous class.</li>
+  <li>When a concrete strategy is designed for repeated use, it is generally implemented as a private static member class and exported in a public static final field whose type is the strategy interface.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Exporting a concrete strategy</span>
+<span class="kd">class</span> <span class="nc">Host</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">StrLenCmp</span> <span class="kd">implements</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;,</span> <span class="n">Serializable</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">String</span> <span class="n">s1</span><span class="o">,</span> <span class="n">String</span> <span class="n">s2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">s1</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">s2</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+<span class="c1">// Returned comparator is serializable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">STRING_LENGTH_COMPARATOR</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StrLenCmp</span><span class="o">();</span>
+<span class="o">...</span> <span class="c1">// Bulk of class omitted</span>
+<span class="o">}</span></code></pre></figure>
+
+<h1 id="item-22-favor-static-member-class-over-non-static">Item 22 Favor static member class over non static</h1>
+
+<ul>
+  <li>A nested class is a class within another class.</li>
+  <li>4 kind of nested classes. static member class, non static member class, anonymous class and local class</li>
+  <li>inner class =&gt; non static member class , anonymous class, local class</li>
+  <li>A static member class is the simplest kind of nested class. It is best thought of as an ordinary class that happens to be declared inside another class and has
+access to all of the enclosing class’s members, even those declared private.</li>
+  <li>The association between a nonstatic member class instance and its enclosing instance is established when the former is created; it cannot be modified
+thereafter. Normally, the association is established automatically by invoking a nonstatic member class constructor from within an instance method of the
+enclosing class.</li>
+  <li>If an instance of a nested class can exist in isolation from an instance of its enclosingclass, then the nested class must be a static member class</li>
+  <li>it is impossible to create an instance of a nonstatic member class without an enclosing instance.</li>
+  <li>A common use of private static member classes is to represent components of the object represented by their enclosing class. For example, consider a Map
+instance, which associates keys with values. Many Map implementations have an internal Entry object for each key-value pair in the map. While each entry is associated
+with a map, the methods on an entry (getKey, getValue, and setValue) do not need access to the map. Therefore, it would be wasteful to use a nonstatic
+member class to represent entries: a private static member class is best. If you accidentally omit the static modifier in the entry declaration, the map will still
+work, but each entry will contain a superfluous reference to the map, which wastes space and time.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Typical use of a nonstatic member class</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MySet</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">AbstractSet</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="o">{</span>
+  <span class="o">...</span> <span class="c1">// Bulk of the class omitted</span>
+  <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">MyIterator</span><span class="o">();</span>
+  <span class="o">}</span>
+  <span class="kd">private</span> <span class="kd">class</span> <span class="nc">MyIterator</span> <span class="kd">implements</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="o">...</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h1 id="item-23-dont-use-raw-types-in-new-code">Item 23 Don’t use raw types in new code</h1>
+
+<ul>
+  <li>A class or interface whose declaration has one or more type parameters is a generic class or interface. The List interface has a single type parameter, E, representing the element type of the list.</li>
+  <li>If you use raw types, you lose all the safety and expressiveness benefits of generics</li>
+  <li>you lose type safety if you use a raw type like List, but not if you use a parameterized type like List<object></object></li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Term</td>
+      <td>Example</td>
+      <td>Item</td>
+    </tr>
+    <tr>
+      <td>parameterized type</td>
+      <td>List<String></String></td>
+      <td>item 23</td>
+    </tr>
+    <tr>
+      <td>Actual type parameter</td>
+      <td>String</td>
+      <td>Item 23</td>
+    </tr>
+    <tr>
+      <td>Generic Type</td>
+      <td>List <E></E></td>
+      <td>Items 23,26</td>
+    </tr>
+    <tr>
+      <td>Formal type parameter</td>
+      <td>E</td>
+      <td>Item 23</td>
+    </tr>
+    <tr>
+      <td>Unbounded wildcard type</td>
+      <td>List &lt;?&gt;</td>
+      <td>item 23</td>
+    </tr>
+    <tr>
+      <td>Raw type</td>
+      <td>List</td>
+      <td>Item 23</td>
+    </tr>
+    <tr>
+      <td>Bounded type parameter</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="item-31--use-instance-fields-instead-of-ordinals">Item 31  Use instance fields instead of Ordinals</h1>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Abuse of ordinal to derive an associated value - DON'T DO THIS</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Ensemble</span> <span class="o">{</span>
+  <span class="n">SOLO</span><span class="o">,</span> <span class="n">DUET</span><span class="o">,</span> <span class="n">TRIO</span><span class="o">,</span> <span class="n">QUARTET</span><span class="o">,</span> <span class="n">QUINTET</span><span class="o">,</span><span class="n">SEXTET</span><span class="o">,</span> <span class="n">SEPTET</span><span class="o">,</span> <span class="n">OCTET</span><span class="o">,</span> <span class="n">NONET</span><span class="o">,</span> <span class="n">DECTET</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numberOfMusicians</span><span class="o">()</span> <span class="o">{</span>
+     <span class="k">return</span> <span class="nf">ordinal</span><span class="o">()</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<ul>
+  <li>Never derive a value associated with an enum from its Ordianal; store it in an instance field instead.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">enum</span> <span class="n">Ensemble</span> <span class="o">{</span>
+  <span class="n">SOLO</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">DUET</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="n">TRIO</span><span class="o">(</span><span class="mi">3</span><span class="o">),</span> <span class="n">QUARTET</span><span class="o">(</span><span class="mi">4</span><span class="o">),</span> <span class="n">QUINTET</span><span class="o">(</span><span class="mi">5</span><span class="o">),</span><span class="n">SEXTET</span><span class="o">(</span><span class="mi">6</span><span class="o">),</span> <span class="n">SEPTET</span><span class="o">(</span><span class="mi">7</span><span class="o">),</span> <span class="n">OCTET</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span> <span class="n">DOUBLE_QUARTET</span><span class="o">(</span><span class="mi">8</span><span class="o">),</span><span class="n">NONET</span><span class="o">(</span><span class="mi">9</span><span class="o">),</span> <span class="n">DECTET</span><span class="o">(</span><span class="mi">10</span><span class="o">),</span> <span class="n">TRIPLE_QUARTET</span><span class="o">(</span><span class="mi">12</span><span class="o">);</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">numberOfMusicians</span><span class="o">;</span>
+  <span class="n">Ensemble</span><span class="o">(</span><span class="kt">int</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">numberOfMusicians</span> <span class="o">=</span> <span class="n">size</span><span class="o">;</span>
+   <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numberOfMusicians</span><span class="o">()</span> <span class="o">{</span>
+     <span class="k">return</span> <span class="n">numberOfMusicians</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<ul>
+  <li>Most Programmers will have no use for Ordinal method. It is desinged for use by general -purpose enum based data structures such as EnumSet and EnumMap
+unless you are writing such a data structure , you are best off avoiding the ordinal method entirely.</li>
+</ul>
+
+<h1 id="item-32-use-enumset-instead-of-bit-fields">Item 32 Use EnumSet instead of bit fields</h1>
+
+<ul>
+  <li>If the elements of an enumerated type are used primarily in sets, it is traditional to use the int enum pattern (Item 30), assigning a different power of 2 to each constant:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Bit field enumeration constants - OBSOLETE!</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Text</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">STYLE_BOLD</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// 1</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">STYLE_ITALIC</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="o">;</span> <span class="c1">// 2</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">STYLE_UNDERLINE</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="o">;</span> <span class="c1">// 4</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">STYLE_STRIKETHROUGH</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="o">;</span> <span class="c1">// 8</span>
+  <span class="c1">// Parameter is bitwise OR of zero or more STYLE_ constants</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">applyStyles</span><span class="o">(</span><span class="kt">int</span> <span class="n">styles</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<table>
+  <tbody>
+    <tr>
+      <td>text.applyStyles(STYLE_BOLD</td>
+      <td>STYLE_ITALIC);</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// EnumSet - a modern replacement for bit fields</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Text</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Style</span> <span class="o">{</span> <span class="n">BOLD</span><span class="o">,</span> <span class="n">ITALIC</span><span class="o">,</span> <span class="n">UNDERLINE</span><span class="o">,</span> <span class="n">STRIKETHROUGH</span> <span class="o">}</span>
+  <span class="c1">// Any Set could be passed in, but EnumSet is clearly best</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">applyStyles</span><span class="o">(</span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Style</span><span class="o">&gt;</span> <span class="n">styles</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+  <span class="o">}</span></code></pre></figure>
+
+<p>text.applyStyles(EnumSet.of(Style.BOLD, Style.ITALIC));</p>
+
+<ul>
+  <li>Just because an enumerated type will be used in sets, there is no reason to represent it with bit fields.</li>
+  <li>The one disadvantage of enum set as of release 1.6 that it is not possible to create an immutable enum set. Wrap enumset with collections.unmodifiableSet</li>
+</ul>
+
+<h1 id="item-33--use-enum-map-instead-of-ordinal-indexing">Item 33  Use Enum map instead of ordinal indexing</h1>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Herb</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Type</span> <span class="o">{</span> <span class="n">ANNUAL</span><span class="o">,</span> <span class="n">PERENNIAL</span><span class="o">,</span> <span class="n">BIENNIAL</span> <span class="o">}</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">Type</span> <span class="n">type</span><span class="o">;</span>
+  <span class="n">Herb</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">Type</span> <span class="n">type</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">type</span> <span class="o">=</span> <span class="n">type</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="nd">@Override</span> <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<ul>
+  <li>Now suppose you have an array of herbs representing the plants in a garden,and you want to list these plants organized by type (annual, perennial, or biennial).
+To do this, you construct three sets, one for each type, and iterate through the garden, placing each herb in the appropriate set.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Using ordinal() to index an array - DON'T DO THIS!</span>
+<span class="n">Herb</span><span class="o">[]</span> <span class="n">garden</span> <span class="o">=</span> <span class="o">...</span> <span class="o">;</span>
+<span class="n">Set</span><span class="o">&lt;</span><span class="n">Herb</span><span class="o">&gt;[]</span> <span class="n">herbsByType</span> <span class="o">=</span> <span class="c1">// Indexed by Herb.Type.ordinal()</span>
+<span class="o">(</span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Herb</span><span class="o">&gt;[])</span> <span class="k">new</span> <span class="n">Set</span><span class="o">[</span><span class="n">Herb</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">values</span><span class="o">().</span><span class="na">length</span><span class="o">];</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">herbsByType</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+  <span class="n">herbsByType</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Herb</span><span class="o">&gt;();</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">Herb</span> <span class="n">h</span> <span class="o">:</span> <span class="n">garden</span><span class="o">)</span>
+  <span class="n">herbsByType</span><span class="o">[</span><span class="n">h</span><span class="o">.</span><span class="na">type</span><span class="o">.</span><span class="na">ordinal</span><span class="o">()].</span><span class="na">add</span><span class="o">(</span><span class="n">h</span><span class="o">);</span>
+<span class="c1">// Print the results</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">herbsByType</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%s: %s%n"</span><span class="o">,</span><span class="n">Herb</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">values</span><span class="o">()[</span><span class="n">i</span><span class="o">],</span> <span class="n">herbsByType</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Using an EnumMap to associate data with an enum</span>
+<span class="n">Map</span><span class="o">&lt;</span><span class="n">Herb</span><span class="o">.</span><span class="na">Type</span><span class="o">,</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Herb</span><span class="o">&gt;&gt;</span> <span class="n">herbsByType</span> <span class="o">=</span><span class="k">new</span> <span class="n">EnumMap</span><span class="o">&lt;</span><span class="n">Herb</span><span class="o">.</span><span class="na">Type</span><span class="o">,</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Herb</span><span class="o">&gt;&gt;(</span><span class="n">Herb</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">Herb</span><span class="o">.</span><span class="na">Type</span> <span class="n">t</span> <span class="o">:</span> <span class="n">Herb</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">values</span><span class="o">())</span>
+  <span class="n">herbsByType</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Herb</span><span class="o">&gt;());</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">Herb</span> <span class="n">h</span> <span class="o">:</span> <span class="n">garden</span><span class="o">)</span>
+  <span class="n">herbsByType</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">h</span><span class="o">.</span><span class="na">type</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="n">h</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">herbsByType</span><span class="o">);</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Using ordinal() to index array of arrays - DON'T DO THIS!</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Phase</span> <span class="o">{</span>
+  <span class="n">SOLID</span><span class="o">,</span> <span class="n">LIQUID</span><span class="o">,</span> <span class="n">GAS</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Transition</span> <span class="o">{</span>
+    <span class="n">MELT</span><span class="o">,</span> <span class="n">FREEZE</span><span class="o">,</span> <span class="n">BOIL</span><span class="o">,</span> <span class="n">CONDENSE</span><span class="o">,</span> <span class="n">SUBLIME</span><span class="o">,</span> <span class="n">DEPOSIT</span><span class="o">;</span>
+
+    <span class="c1">// Rows indexed by src-ordinal, cols by dst-ordinal</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Transition</span><span class="o">[][]</span> <span class="n">TRANSITIONS</span> <span class="o">=</span> <span class="o">{</span>
+      <span class="o">{</span> <span class="kc">null</span><span class="o">,</span> <span class="n">MELT</span><span class="o">,</span> <span class="n">SUBLIME</span> <span class="o">},</span>
+      <span class="o">{</span> <span class="n">FREEZE</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">BOIL</span> <span class="o">},</span>
+      <span class="o">{</span> <span class="n">DEPOSIT</span><span class="o">,</span> <span class="n">CONDENSE</span><span class="o">,</span> <span class="kc">null</span> <span class="o">}</span>
+    <span class="o">};</span>
+    <span class="c1">// Returns the phase transition from one phase to another</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Transition</span> <span class="nf">from</span><span class="o">(</span><span class="n">Phase</span> <span class="n">src</span><span class="o">,</span> <span class="n">Phase</span> <span class="n">dst</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">TRANSITIONS</span><span class="o">[</span><span class="n">src</span><span class="o">.</span><span class="na">ordinal</span><span class="o">()][</span><span class="n">dst</span><span class="o">.</span><span class="na">ordinal</span><span class="o">()];</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Using a nested EnumMap to associate data with enum pairs</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Phase</span> <span class="o">{</span>
+  <span class="n">SOLID</span><span class="o">,</span> <span class="n">LIQUID</span><span class="o">,</span> <span class="n">GAS</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Transition</span> <span class="o">{</span>
+    <span class="n">MELT</span><span class="o">(</span><span class="n">SOLID</span><span class="o">,</span> <span class="n">LIQUID</span><span class="o">),</span> <span class="n">FREEZE</span><span class="o">(</span><span class="n">LIQUID</span><span class="o">,</span> <span class="n">SOLID</span><span class="o">),</span>
+    <span class="n">BOIL</span><span class="o">(</span><span class="n">LIQUID</span><span class="o">,</span> <span class="n">GAS</span><span class="o">),</span> <span class="n">CONDENSE</span><span class="o">(</span><span class="n">GAS</span><span class="o">,</span> <span class="n">LIQUID</span><span class="o">),</span>
+    <span class="n">SUBLIME</span><span class="o">(</span><span class="n">SOLID</span><span class="o">,</span> <span class="n">GAS</span><span class="o">),</span> <span class="n">DEPOSIT</span><span class="o">(</span><span class="n">GAS</span><span class="o">,</span> <span class="n">SOLID</span><span class="o">);</span>
+    <span class="kd">final</span> <span class="n">Phase</span> <span class="n">src</span><span class="o">;</span>
+    <span class="kd">final</span> <span class="n">Phase</span> <span class="n">dst</span><span class="o">;</span>
+    <span class="n">Transition</span><span class="o">(</span><span class="n">Phase</span> <span class="n">src</span><span class="o">,</span> <span class="n">Phase</span> <span class="n">dst</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">src</span> <span class="o">=</span> <span class="n">src</span><span class="o">;</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">dst</span> <span class="o">=</span> <span class="n">dst</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="c1">// Initialize the phase transition map</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Phase</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Phase</span><span class="o">,</span><span class="n">Transition</span><span class="o">&gt;&gt;</span> <span class="n">m</span> <span class="o">=</span><span class="k">new</span> <span class="n">EnumMap</span><span class="o">&lt;</span><span class="n">Phase</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Phase</span><span class="o">,</span><span class="n">Transition</span><span class="o">&gt;&gt;(</span><span class="n">Phase</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="kd">static</span> <span class="o">{</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">Phase</span> <span class="n">p</span> <span class="o">:</span> <span class="n">Phase</span><span class="o">.</span><span class="na">values</span><span class="o">())</span>
+        <span class="n">m</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">p</span><span class="o">,</span><span class="k">new</span> <span class="n">EnumMap</span><span class="o">&lt;</span><span class="n">Phase</span><span class="o">,</span><span class="n">Transition</span><span class="o">&gt;(</span><span class="n">Phase</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">Transition</span> <span class="n">trans</span> <span class="o">:</span> <span class="n">Transition</span><span class="o">.</span><span class="na">values</span><span class="o">())</span>
+        <span class="n">m</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">trans</span><span class="o">.</span><span class="na">src</span><span class="o">).</span><span class="na">put</span><span class="o">(</span><span class="n">trans</span><span class="o">.</span><span class="na">dst</span><span class="o">,</span> <span class="n">trans</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Transition</span> <span class="nf">from</span><span class="o">(</span><span class="n">Phase</span> <span class="n">src</span><span class="o">,</span> <span class="n">Phase</span> <span class="n">dst</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">m</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">src</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="n">dst</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<ul>
+  <li>
+    <p>Now suppose you want to add a new phase to the system: the plasma. There are only two transitions associated with this phase: ionization,
+which takes a gas to a plasma; and deionization, which takes a plasma to a gas. To update the array-based program, you would have to add one new constant to
+Phase and two to Phase.Transition, and replace the original nine-element array of arrays with a new sixteen-element version. If you add too many or too few elements
+to the array, or place an element out of order, you are out of luck: the program will compile, but it will fail at runtime. To update the EnumMap-based
+version, all you have to do is add PLASMA to the list of phases, and IONIZE(GAS,PLASMA) and DEIONIZE(PLASMA, GAS) to the list of phase transitions.</p>
+  </li>
+  <li>
+    <p>In summary, it is rarely appropriate to use ordinals to index arrays: use EnumMap instead.</p>
+  </li>
+</ul>
+
+<h1 id="item-35--prefer-annotations-to-naming-patterns">Item 35  Prefer annotations to naming patterns</h1>
+
+<ul>
+  <li>
+    <p>Prior to release 1.5, it was common to use naming patterns to indicate that some program elements demanded special treatment by a tool or framework.
+For example,the JUnit testing framework originally required its users to designate test methods by beginning their names with the characters test</p>
+  </li>
+  <li>First, typographical errors may result in silent failures  Ex tsetSafetyOverride</li>
+  <li>A second disadvantage of naming patterns is that there is no way to ensure that they are used only on appropriate program elements Ex call a class testSafetyMechanisms and hoping all methods will be tests</li>
+  <li>A third disadvantage of naming patterns is that they provide no good way to associate parameter values with program elements
+  Ex You want to support a test that succeeds only if it throws a particular exception.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="c1">// Marker annotation type declaration</span>
+  <span class="kn">import</span> <span class="nn">java.lang.annotation.*</span><span class="o">;</span>
+  <span class="cm">/**
+  * Indicates that the annotated method is a test method.
+  * Use only on parameterless static methods.
+  */</span>
+  <span class="nd">@Retention</span><span class="o">(</span><span class="n">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span>
+  <span class="nd">@Target</span><span class="o">(</span><span class="n">ElementType</span><span class="o">.</span><span class="na">METHOD</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="nd">@interface</span> <span class="n">Test</span> <span class="o">{</span>
+  <span class="o">}</span>
+  </code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">effectivejava</span><span class="o">.</span><span class="na">examples</span><span class="o">.</span><span class="na">chapter06</span><span class="o">.</span><span class="na">item35</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sample</span> <span class="o">{</span>
+	<span class="nd">@Test</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">m1</span><span class="o">()</span> <span class="o">{</span>
+	<span class="o">}</span> <span class="c1">// Test should pass</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">m2</span><span class="o">()</span> <span class="o">{</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Test</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">m3</span><span class="o">()</span> <span class="o">{</span> <span class="c1">// Test Should fail</span>
+		<span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"Boom"</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">m4</span><span class="o">()</span> <span class="o">{</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Test</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">m5</span><span class="o">()</span> <span class="o">{</span>
+	<span class="o">}</span> <span class="c1">// INVALID USE: nonstatic method</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">m6</span><span class="o">()</span> <span class="o">{</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Test</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">m7</span><span class="o">()</span> <span class="o">{</span> <span class="c1">// Test should fail</span>
+		<span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"Crash"</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">m8</span><span class="o">()</span> <span class="o">{</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Program to process marker annotations - Page 171</span>
+<span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">effectivejava</span><span class="o">.</span><span class="na">examples</span><span class="o">.</span><span class="na">chapter06</span><span class="o">.</span><span class="na">item35</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.lang.reflect.InvocationTargetException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.reflect.Method</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RunTests</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+		<span class="kt">int</span> <span class="n">tests</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+		<span class="kt">int</span> <span class="n">passed</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+		<span class="n">Class</span> <span class="n">testClass</span> <span class="o">=</span> <span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+		<span class="k">for</span> <span class="o">(</span><span class="n">Method</span> <span class="n">m</span> <span class="o">:</span> <span class="n">testClass</span><span class="o">.</span><span class="na">getDeclaredMethods</span><span class="o">())</span> <span class="o">{</span>
+			<span class="k">if</span> <span class="o">(</span><span class="n">m</span><span class="o">.</span><span class="na">isAnnotationPresent</span><span class="o">(</span><span class="n">Test</span><span class="o">.</span><span class="na">class</span><span class="o">))</span> <span class="o">{</span>
+				<span class="n">tests</span><span class="o">++;</span>
+				<span class="k">try</span> <span class="o">{</span>
+					<span class="n">m</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+					<span class="n">passed</span><span class="o">++;</span>
+				<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InvocationTargetException</span> <span class="n">wrappedExc</span><span class="o">)</span> <span class="o">{</span>
+					<span class="n">Throwable</span> <span class="n">exc</span> <span class="o">=</span> <span class="n">wrappedExc</span><span class="o">.</span><span class="na">getCause</span><span class="o">();</span>
+					<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">m</span> <span class="o">+</span> <span class="s">" failed: "</span> <span class="o">+</span> <span class="n">exc</span><span class="o">);</span>
+				<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
+					<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"INVALID @Test: "</span> <span class="o">+</span> <span class="n">m</span><span class="o">);</span>
+				<span class="o">}</span>
+			<span class="o">}</span>
+
+			<span class="c1">// Array ExceptionTest processing code - Page 174</span>
+			<span class="k">if</span> <span class="o">(</span><span class="n">m</span><span class="o">.</span><span class="na">isAnnotationPresent</span><span class="o">(</span><span class="n">ExceptionTest</span><span class="o">.</span><span class="na">class</span><span class="o">))</span> <span class="o">{</span>
+				<span class="n">tests</span><span class="o">++;</span>
+				<span class="k">try</span> <span class="o">{</span>
+					<span class="n">m</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+					<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"Test %s failed: no exception%n"</span><span class="o">,</span> <span class="n">m</span><span class="o">);</span>
+				<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">wrappedExc</span><span class="o">)</span> <span class="o">{</span>
+					<span class="n">Throwable</span> <span class="n">exc</span> <span class="o">=</span> <span class="n">wrappedExc</span><span class="o">.</span><span class="na">getCause</span><span class="o">();</span>
+					<span class="n">Class</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Exception</span><span class="o">&gt;[]</span> <span class="n">excTypes</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="na">getAnnotation</span><span class="o">(</span>
+							<span class="n">ExceptionTest</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">value</span><span class="o">();</span>
+					<span class="kt">int</span> <span class="n">oldPassed</span> <span class="o">=</span> <span class="n">passed</span><span class="o">;</span>
+					<span class="k">for</span> <span class="o">(</span><span class="n">Class</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Exception</span><span class="o">&gt;</span> <span class="n">excType</span> <span class="o">:</span> <span class="n">excTypes</span><span class="o">)</span> <span class="o">{</span>
+						<span class="k">if</span> <span class="o">(</span><span class="n">excType</span><span class="o">.</span><span class="na">isInstance</span><span class="o">(</span><span class="n">exc</span><span class="o">))</span> <span class="o">{</span>
+							<span class="n">passed</span><span class="o">++;</span>
+							<span class="k">break</span><span class="o">;</span>
+						<span class="o">}</span>
+					<span class="o">}</span>
+					<span class="k">if</span> <span class="o">(</span><span class="n">passed</span> <span class="o">==</span> <span class="n">oldPassed</span><span class="o">)</span>
+						<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"Test %s failed: %s %n"</span><span class="o">,</span> <span class="n">m</span><span class="o">,</span> <span class="n">exc</span><span class="o">);</span>
+				<span class="o">}</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"Passed: %d, Failed: %d%n"</span><span class="o">,</span> <span class="n">passed</span><span class="o">,</span> <span class="n">tests</span> <span class="o">-</span> <span class="n">passed</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+  </code></pre></figure>
+
 
   </div>
 

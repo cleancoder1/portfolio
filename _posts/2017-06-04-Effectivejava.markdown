@@ -448,6 +448,14 @@ public class MySet<E> extends AbstractSet<E> {
 * If you use raw types, you lose all the safety and expressiveness benefits of generics
 * you lose type safety if you use a raw type like List, but not if you use a parameterized type like List<Object>
 
+|Term|Example | Item
+|parameterized type | List<String> | item 23
+|Actual type parameter| String | Item 23
+|Generic Type | List <E> | Items 23,26
+|Formal type parameter | E | Item 23
+|Unbounded wildcard type| List <?> | item 23
+|Raw type| List | Item 23
+|Bounded type parameter|
 
 # Item 31  Use instance fields instead of Ordinals
 {% highlight java %}
@@ -620,3 +628,114 @@ to the array, or place an element out of order, you are out of luck: the program
 version, all you have to do is add PLASMA to the list of phases, and IONIZE(GAS,PLASMA) and DEIONIZE(PLASMA, GAS) to the list of phase transitions.
 
 * In summary, it is rarely appropriate to use ordinals to index arrays: use EnumMap instead.
+
+
+# Item 35  Prefer annotations to naming patterns
+
+* Prior to release 1.5, it was common to use naming patterns to indicate that some program elements demanded special treatment by a tool or framework.
+For example,the JUnit testing framework originally required its users to designate test methods by beginning their names with the characters test
+
+ * First, typographical errors may result in silent failures  Ex tsetSafetyOverride
+ * A second disadvantage of naming patterns is that there is no way to ensure that they are used only on appropriate program elements Ex call a class testSafetyMechanisms and hoping all methods will be tests
+ * A third disadvantage of naming patterns is that they provide no good way to associate parameter values with program elements
+  Ex You want to support a test that succeeds only if it throws a particular exception.
+
+  {% highlight java %}
+  // Marker annotation type declaration
+  import java.lang.annotation.*;
+  /**
+  * Indicates that the annotated method is a test method.
+  * Use only on parameterless static methods.
+  */
+  @Retention(RetentionPolicy.RUNTIME)
+  @Target(ElementType.METHOD)
+  public @interface Test {
+  }
+  {% endhighlight %}
+
+  {% highlight java %}
+  package org.effectivejava.examples.chapter06.item35;
+
+public class Sample {
+	@Test
+	public static void m1() {
+	} // Test should pass
+
+	public static void m2() {
+	}
+
+	@Test
+	public static void m3() { // Test Should fail
+		throw new RuntimeException("Boom");
+	}
+
+	public static void m4() {
+	}
+
+	@Test
+	public void m5() {
+	} // INVALID USE: nonstatic method
+
+	public static void m6() {
+	}
+
+	@Test
+	public static void m7() { // Test should fail
+		throw new RuntimeException("Crash");
+	}
+
+	public static void m8() {
+	}
+}
+
+// Program to process marker annotations - Page 171
+package org.effectivejava.examples.chapter06.item35;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+public class RunTests {
+	public static void main(String[] args) throws Exception {
+		int tests = 0;
+		int passed = 0;
+		Class testClass = Class.forName(args[0]);
+		for (Method m : testClass.getDeclaredMethods()) {
+			if (m.isAnnotationPresent(Test.class)) {
+				tests++;
+				try {
+					m.invoke(null);
+					passed++;
+				} catch (InvocationTargetException wrappedExc) {
+					Throwable exc = wrappedExc.getCause();
+					System.out.println(m + " failed: " + exc);
+				} catch (Exception exc) {
+					System.out.println("INVALID @Test: " + m);
+				}
+			}
+
+			// Array ExceptionTest processing code - Page 174
+			if (m.isAnnotationPresent(ExceptionTest.class)) {
+				tests++;
+				try {
+					m.invoke(null);
+					System.out.printf("Test %s failed: no exception%n", m);
+				} catch (Throwable wrappedExc) {
+					Throwable exc = wrappedExc.getCause();
+					Class<? extends Exception>[] excTypes = m.getAnnotation(
+							ExceptionTest.class).value();
+					int oldPassed = passed;
+					for (Class<? extends Exception> excType : excTypes) {
+						if (excType.isInstance(exc)) {
+							passed++;
+							break;
+						}
+					}
+					if (passed == oldPassed)
+						System.out.printf("Test %s failed: %s %n", m, exc);
+				}
+			}
+		}
+		System.out.printf("Passed: %d, Failed: %d%n", passed, tests - passed);
+	}
+}
+  {% endhighlight%}
