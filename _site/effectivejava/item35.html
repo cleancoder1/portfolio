@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="A website to blog about programming ,fitness and yoga">
+  <title>Item 35: Prefer annotations to naming patterns</title>
+  <meta name="description" content="Item 35 Prefer annotations to naming patterns">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/about/">
+  <link rel="canonical" href="http://localhost:4000/effectivejava/item35.html">
   <link rel="alternate" type="application/rss+xml" title="Programming Passion" href="/feed.xml">
   
   
@@ -37,7 +37,7 @@
       <div class="trigger">
         
           
-          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/effectiveJava.html">Effective Java</a>
           
         
           
@@ -58,17 +58,30 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">Item 35: Prefer annotations to naming patterns</h1>
+    <p class="post-meta"><time datetime="2017-08-01T10:06:23-05:00" itemprop="datePublished">Aug 1, 2017</time></p>
   </header>
 
-  <div class="post-content">
-    <p>A blog to post intresting stuff about programming, fitness and Yoga.</p>
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="item-35--prefer-annotations-to-naming-patterns">Item 35  Prefer annotations to naming patterns</h1>
+
+<ul>
+  <li>
+    <p>Prior to release 1.5, it was common to use naming patterns to indicate that some program elements demanded special treatment by a tool or framework.
+For example,the JUnit testing framework originally required its users to designate test methods by beginning their names with the characters test</p>
+  </li>
+  <li>First, typographical errors may result in silent failures  Ex tsetSafetyOverride</li>
+  <li>A second disadvantage of naming patterns is that there is no way to ensure that they are used only on appropriate program elements Ex call a class testSafetyMechanisms and hoping all methods will be tests</li>
+  <li>A third disadvantage of naming patterns is that they provide no good way to associate parameter values with program elements
+  Ex You want to support a test that succeeds only if it throws a particular exception.</li>
+</ul>
 
   </div>
 
+  
 </article>
 
       </div>

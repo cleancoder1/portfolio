@@ -28,7 +28,10 @@ theme: minima
 gems:
   - jekyll-feed
 collections:
-  - effective
+  effectivejava:
+    output: true
+    
+
 exclude:
   - Gemfile
   - Gemfile.lock
