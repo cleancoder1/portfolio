@@ -7,7 +7,7 @@ published: true
 
 ---
 
-# Item 35  Prefer annotations to naming patterns
+# Item 35  Prefer Annotations to naming patterns
 
 * Prior to release 1.5, it was common to use naming patterns to indicate that some program elements demanded special treatment by a tool or framework.
 For example,the JUnit testing framework originally required its users to designate test methods by beginning their names with the characters test
