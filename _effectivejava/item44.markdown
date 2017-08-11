@@ -16,6 +16,9 @@ published: true
 rather than how it does its job. The doc comment should enumerate all of the method’s preconditions, which are the things that have to be true in order for a client
 to invoke it, and its postconditions. Finally, documentation comments should describe the thread safety of a class or method.
 
+* Two aspects of a class’s exported API that are often neglected are threadsafety and serializability. Whether or not a class is thread-safe, you should document
+its thread-safety level. If a class is serializable, you should document its serialized form
+
 {% highlight java %}
 /**
 * Returns the element at the specified position in this list.
