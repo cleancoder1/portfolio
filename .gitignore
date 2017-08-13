@@ -1,2 +1,5 @@
 Gemfile
 Gemfile.lock
+.idea
+portfolio.iml
+/.sass-cache/**
