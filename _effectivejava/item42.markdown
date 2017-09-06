@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Item 42: Use varargs judiciously"
-date:   2017-08-01 09:06:23 -0600
+date:   2017-08-01 09:06:42 -0600
 categories: Java
 published: true
 

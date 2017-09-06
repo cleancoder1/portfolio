@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Item 44: Write doc comments for all exposed API elements"
-date:   2017-08-01 09:06:23 -0600
+date:   2017-08-01 09:06:43 -0600
 categories: Java
 published: true
 

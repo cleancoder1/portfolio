@@ -8,7 +8,52 @@
             <set />
           </value>
         </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/_effectivejava/item41.markdown">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/_effectivejava/item42.markdown">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/_effectivejava/item44.markdown">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/domain/eligibility/Coverage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/domain/eligibility/MemberAdditionalInformationService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/view/service/EligibilityBenefitsPdfService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/test/groovy/com/ddia/view/controller/PatientSearchControllerSpec.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../effective-java-examples/src/main/java/org/effectivejava/examples/chapter07/item42/Varargs.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../sixtyDayChallenge/_sixtyDayChallenge/Day3_Aug14.md">
           <value>
             <set />
           </value>
