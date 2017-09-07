@@ -12,7 +12,7 @@ published: true
 * Too many methods make a class difficult to learn, use, document, test, and maintain
 * Avoid long parameter lists (four parameters or fewer)
     * Use builder pattern, helper classes or helper methods to avoid long parameter lists
-    * A technique for shortering long parameter lists is to create helper classes to hold groups of parameters
+    * A technique for shortening long parameter lists is to create helper classes to hold groups of parameters
     For example, suppose you are writing a class representing a card game, and you find yourself
     constantly passing a sequence of two parameters representing a card’s rank and its
     suit. Your API, as well as the internals of your class, would probably benefit if you
