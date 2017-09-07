@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Item 39: Make defensive copies when needed
+title:  "Item 39: Make defensive copies when needed"
 date:   2017-08-01 09:05:39 -0600
 categories: Java
 published: true
