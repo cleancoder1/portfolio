@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/_effectivejava/item38.markdown">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/_effectivejava/item39.markdown">
           <value>
             <set />
@@ -38,6 +43,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../ddia-web-portal/src/integTest/groovy/com/ddia/view/controller/EnrollmentRestControllerIntegrationSpec.groovy">
           <value>
             <set />
@@ -53,12 +63,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/view/controller/EmployerManageMembersController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/view/mappers/EnrollmentMapper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/view/service/EligibilityBenefitsPdfService.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/view/service/ManageMemberService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../ddia-web-portal/src/test/groovy/com/ddia/view/controller/PatientSearchControllerSpec.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../effective-java-examples/src/main/java/org/effectivejava/examples/chapter04/item18/IntArrays.java">
           <value>
             <set />
           </value>
