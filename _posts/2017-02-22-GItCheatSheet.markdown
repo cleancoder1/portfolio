@@ -4,9 +4,9 @@ title:  "Git Cheat Sheet"
 date:   2017-02-17 21:06:23 -0600
 categories: Java
 ---
-Git Deleting branches all except develop
+Git Deleting branches all except develop and master
 {% highlight PowerShell %}
-git branch | grep -v "develop" | xargs git branch -D
+git branch | grep -v "develop" | grep -v "master"| xargs git branch -D
 {% endhighlight %}
 
 {% highlight PowerShell %}

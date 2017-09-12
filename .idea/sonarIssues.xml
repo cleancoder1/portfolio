@@ -48,6 +48,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/_posts/2017-02-22-GItCheatSheet.markdown">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../ddia-web-portal/build.gradle">
           <value>
             <set />
@@ -69,6 +74,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/view/controller/EmployerManageMembersController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/view/form/EnrollMemberToAGroupDTO.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/view/mappers/EnrollMemberMapper.java">
           <value>
             <set />
           </value>
