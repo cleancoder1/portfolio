@@ -11,6 +11,11 @@ git branch | grep -v "develop" | grep -v "master"| xargs git branch -D
 
 {% highlight PowerShell %}
 
+Pruning remote branches that are merged , leaving develop and upstream
+{% highlight PowerShell %}
+ git branch --list --remote --merged | grep -v "develop"| grep -v "upstream"|  sed 's/ *origin\///'  | xargs -p -I branch git push origin :branch
+{% endhighlight %}
+
 #Listing all branches
 git branch -a
 #Local Branch Deleting
