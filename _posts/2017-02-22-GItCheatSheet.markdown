@@ -9,7 +9,6 @@ Git Deleting branches all except develop and master
 git branch | grep -v "develop" | grep -v "master"| xargs git branch -D
 {% endhighlight %}
 
-{% highlight PowerShell %}
 
 Pruning remote branches that are merged , leaving develop and upstream
 {% highlight PowerShell %}
