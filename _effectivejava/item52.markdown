@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Item 51: Refer to objects by their interfaces"
+title:  "Item 52: Refer to objects by their interfaces"
 date:   2017-08-01 09:06:52 -0600
 categories: Java
 published: true
