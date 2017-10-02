@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/_effectivejava/item38.markdown">
           <value>
             <set />
@@ -48,7 +53,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/_effectivejava/item51.markdown">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/_posts/2017-02-22-GItCheatSheet.markdown">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../algorithms/week4/build/classes/main/Solver.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../algorithms/week4/src/main/java/Solver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../algorithms/week4/src/resources/puzzle04.txt">
           <value>
             <set />
           </value>
@@ -69,6 +94,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/domain/eligibility/MemberAdditionalInformationService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/view/controller/AddMemberFlowController.java">
           <value>
             <set />
           </value>
@@ -99,6 +129,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/view/service/ManageMemberService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/java/com/ddia/view/validator/EnrollmentFormValidator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/main/webapp/WEB-INF/web-flows/employer/enrollment/enrollment-flow.xml">
           <value>
             <set />
           </value>
