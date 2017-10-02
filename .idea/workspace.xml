@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46f64497-6d40-4748-8eb9-a1cb26ef14d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_effectivejava/item51.markdown" afterPath="$PROJECT_DIR$/_effectivejava/item51.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2017-02-22-GItCheatSheet.markdown" afterPath="$PROJECT_DIR$/_posts/2017-02-22-GItCheatSheet.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/effectiveJava.html" afterPath="$PROJECT_DIR$/_site/effectiveJava.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/effectivejava/item35.html" afterPath="$PROJECT_DIR$/_site/effectivejava/item35.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/feed.xml" afterPath="$PROJECT_DIR$/_site/feed.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/java/2017/02/17/GItCheatSheet.html" afterPath="$PROJECT_DIR$/_site/java/2017/02/17/GItCheatSheet.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,8 +22,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2017-02-22-GItCheatSheet.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="408">
-                <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <first_editor relative-caret-position="328">
+                <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -41,8 +35,8 @@
         <entry file="file://$PROJECT_DIR$/_effectivejava/item51.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="462">
-                <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+              <first_editor relative-caret-position="126">
+                <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -577,7 +571,7 @@
       <workItem from="1505139263083" duration="23000" />
       <workItem from="1505229963289" duration="1396000" />
       <workItem from="1506954804576" duration="1260000" />
-      <workItem from="1506956087314" duration="7000" />
+      <workItem from="1506956087314" duration="103000" />
     </task>
     <task id="LOCAL-00001" summary="adding more detail">
       <created>1502487410712</created>
@@ -691,11 +685,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506955908758</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="added item 51 string concatenation">
+      <created>1506956107333</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1506956107333</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12601000" />
+    <option name="totallyTimeSpent" value="12697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -966,8 +967,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2017-02-22-GItCheatSheet.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="408">
-            <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <first_editor relative-caret-position="328">
+            <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
             <folding />
           </first_editor>
           <second_editor />
@@ -977,8 +978,8 @@
     <entry file="file://$PROJECT_DIR$/_effectivejava/item51.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="462">
-            <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <first_editor relative-caret-position="126">
+            <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
