@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Git Cheat Sheet</title>
-  <meta name="description" content="Git Deleting branches all except develop git branch | grep -v &quot;develop&quot; | xargs git branch -D">
+  <meta name="description" content="Git Deleting branches all except develop and master git branch | grep -v &quot;develop&quot; | grep -v &quot;master&quot;| xargs git branch -D">
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="http://localhost:4000/java/2017/02/17/GItCheatSheet.html">
@@ -66,9 +66,13 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Git Deleting branches all except develop</p>
+    <p>Git Deleting branches all except develop and master</p>
 
-<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell">git branch | grep -v <span class="s2">"develop"</span> | xargs git branch -D</code></pre></figure>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell">git branch | grep -v <span class="s2">"develop"</span> | grep -v <span class="s2">"master"</span>| xargs git branch -D</code></pre></figure>
+
+<p>Pruning remote branches that are merged , leaving develop and upstream</p>
+
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"> git branch --list --remote --merged | grep -v <span class="s2">"develop"</span>| grep -v <span class="s2">"upstream"</span>|  sed <span class="s1">'s/ *origin\///'</span>  | xargs -p -I branch git push origin :branch</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="c1">#Listing all branches</span>
 git branch -a
