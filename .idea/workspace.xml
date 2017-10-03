@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46f64497-6d40-4748-8eb9-a1cb26ef14d8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_effectivejava/item54.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_effectivejava/item53.markdown" afterPath="$PROJECT_DIR$/_effectivejava/item53.markdown" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,18 +19,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Timer.class" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/jre/lib/rt.jar!/java/util/Timer.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#5284#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TimerTask.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/TimerTask.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,12 +57,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item53.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="item53.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_effectivejava/item53.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="48">
                 <caret line="2" column="50" lean-forward="false" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item54.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_effectivejava/item54.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="352">
+                <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -117,6 +119,7 @@
         <option value="$PROJECT_DIR$/_effectivejava/item51.markdown" />
         <option value="$PROJECT_DIR$/_effectivejava/item52.markdown" />
         <option value="$PROJECT_DIR$/_effectivejava/item53.markdown" />
+        <option value="$PROJECT_DIR$/_effectivejava/item54.markdown" />
       </list>
     </option>
   </component>
@@ -615,7 +618,7 @@
       <workItem from="1505139263083" duration="23000" />
       <workItem from="1505229963289" duration="1396000" />
       <workItem from="1506954804576" duration="1260000" />
-      <workItem from="1506956087314" duration="3422000" />
+      <workItem from="1506956087314" duration="3902000" />
     </task>
     <task id="LOCAL-00001" summary="adding more detail">
       <created>1502487410712</created>
@@ -764,11 +767,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507067321396</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Prefer interfaces to reflection">
+      <created>1507067437926</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1507067437926</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16016000" />
+    <option name="totallyTimeSpent" value="16496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -1174,6 +1184,17 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="48">
             <caret line="2" column="50" lean-forward="false" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_effectivejava/item54.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="352">
+            <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
             <folding />
           </first_editor>
           <second_editor />
