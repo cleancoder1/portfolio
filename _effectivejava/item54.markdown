@@ -8,7 +8,7 @@ published: true
 ---
 # Item 54:  Use native methods judiciously
 
-*The Java Native Interface (JNI) allows Java applications to call native methods, which are special methods written in native programming languages such as C or C++
+* The Java Native Interface (JNI) allows Java applications to call native methods, which are special methods written in native programming languages such as C or C++
 JNI has three main uses
     * Access to platform-specific facilities such as registries and file locks
     * Access to libraries of legacy code, which could in turn provide access to legacy data
