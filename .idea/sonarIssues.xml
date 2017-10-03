@@ -68,6 +68,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/_effectivejava/item53.markdown">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/_posts/2017-02-22-GItCheatSheet.markdown">
           <value>
             <set />
@@ -199,6 +204,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../effective-java-examples/src/main/java/org/effectivejava/examples/chapter07/item42/Varargs.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../effective-java-examples/src/main/java/org/effectivejava/examples/chapter07/item53/MakeSet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../effective-java-examples/src/main/java/org/effectivejava/examples/chapter08/item48/Arithmetic.java">
           <value>
             <set />
           </value>
