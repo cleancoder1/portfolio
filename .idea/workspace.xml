@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46f64497-6d40-4748-8eb9-a1cb26ef14d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_effectivejava/item53.markdown" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/effectivejava/item38.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/effectivejava/item39.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/effectivejava/item40.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/effectivejava/item41.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/effectivejava/item42.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/effectivejava/item43.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/effectivejava/item44.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_site/effectivejava/item51.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_effectivejava/item53.markdown" afterPath="$PROJECT_DIR$/_effectivejava/item53.markdown" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -81,8 +72,8 @@
         <entry file="file://$PROJECT_DIR$/_effectivejava/item53.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="318">
-                <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+              <first_editor relative-caret-position="48">
+                <caret line="2" column="50" lean-forward="false" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -624,7 +615,7 @@
       <workItem from="1505139263083" duration="23000" />
       <workItem from="1505229963289" duration="1396000" />
       <workItem from="1506954804576" duration="1260000" />
-      <workItem from="1506956087314" duration="3284000" />
+      <workItem from="1506956087314" duration="3422000" />
     </task>
     <task id="LOCAL-00001" summary="adding more detail">
       <created>1502487410712</created>
@@ -766,11 +757,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506982440526</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Prefer interfaces to reflection">
+      <created>1507067321396</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1507067321396</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15878000" />
+    <option name="totallyTimeSpent" value="16016000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -901,7 +899,8 @@
     <MESSAGE value="check parameters for validity" />
     <MESSAGE value="added item 51 string concatenation" />
     <MESSAGE value="refer to objects by their interfaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="refer to objects by their interfaces" />
+    <MESSAGE value="Prefer interfaces to reflection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prefer interfaces to reflection" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1173,8 +1172,8 @@
     <entry file="file://$PROJECT_DIR$/_effectivejava/item53.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="318">
-            <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+          <first_editor relative-caret-position="48">
+            <caret line="2" column="50" lean-forward="false" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
             <folding />
           </first_editor>
           <second_editor />

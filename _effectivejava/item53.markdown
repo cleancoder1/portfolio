@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Item 53: Prefer interfaces to Reflection
+title:  "Item 53: Prefer interfaces to Reflection"
 date:   2017-08-01 09:06:53 -0600
 categories: Java
 published: true
