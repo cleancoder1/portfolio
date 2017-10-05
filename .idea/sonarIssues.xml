@@ -78,6 +78,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/_effectivejava/item55.markdown">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/_effectivejava/item56.markdown">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/_posts/2017-02-22-GItCheatSheet.markdown">
           <value>
             <set />
@@ -94,6 +104,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../algorithms/week4/src/main/java/Solver.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../algorithms/week4/src/main/java/StockQuote.java">
           <value>
             <set />
           </value>
@@ -198,6 +213,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../ddia-web-portal/src/test/groovy/com/ddia/view/webflows/employer/managemembers/EnrollmentFormValidatorSpec.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../effective-java-examples/src/main/java/org/effectivejava/examples/chapter04/item18/IntArrays.java">
           <value>
             <set />
@@ -214,6 +234,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../effective-java-examples/src/main/java/org/effectivejava/examples/chapter07/item53/MakeSet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../effective-java-examples/src/main/java/org/effectivejava/examples/chapter07/item53/StockQuote.java">
           <value>
             <set />
           </value>
