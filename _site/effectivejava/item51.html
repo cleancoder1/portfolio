@@ -69,19 +69,8 @@
     <h1 id="item-51--beware-the-performance-of-string-concatenation">Item 51:  Beware the performance of string concatenation</h1>
 
 <ul>
-  <li>
-    <p>Using String concatenation operator repeatedly to concatenate n strings requires time 
-quadratic in n. As Strings are immutable, when two strings are concatenated, the contents of both are copied.</p>
-  </li>
-  <li>
-    <p>The doc comment for a method should describe succinctly the contract between the method and its client.the contract should say what the method does
-rather than how it does its job. The doc comment should enumerate all of the method’s preconditions, which are the things that have to be true in order for a client
-to invoke it, and its postconditions. Finally, documentation comments should describe the thread safety of a class or method.</p>
-  </li>
-  <li>
-    <p>Two aspects of a class’s exported API that are often neglected are threadsafety and serializability. Whether or not a class is thread-safe, you should document
-its thread-safety level. If a class is serializable, you should document its serialized form</p>
-  </li>
+  <li>Using String concatenation operator repeatedly to concatenate n strings requires time 
+quadratic in n. As Strings are immutable, when two strings are concatenated, the contents of both are copied.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Inappropriate use of string concatenation - Performs horribly!</span>
